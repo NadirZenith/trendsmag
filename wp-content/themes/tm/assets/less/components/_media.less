@@ -1,0 +1,41 @@
+// Captions
+.wp-caption {
+    &:extend(.thumbnail all);
+}
+
+.wp-caption-text {
+    &:extend(.thumbnail .caption);
+}
+
+// Gallery shortcode
+.gallery{
+      /*clear: both;*/
+      overflow: hidden;
+}
+.gallery-row {
+    padding: (@line-height-computed / 2) 0;
+}
+
+.gallery-item{
+      margin-top: 10px;
+      padding-left: 5px;
+      padding-right: 5px;
+}
+
+//video inside post content
+.entry-content-asset{
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      padding-top: 25px;
+      height: 0;
+}
+.entry-content-asset iframe,
+.entry-content-asset  object,
+.entry-content-asset embed
+{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+}

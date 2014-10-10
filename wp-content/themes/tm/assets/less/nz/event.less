@@ -1,0 +1,150 @@
+
+//date day title header
+.post-type-archive-event main h1{
+      font-size:      @font-size-h3;
+      border-left: 1px solid black;
+      border-bottom: 1px solid black;
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+      padding: 3px;
+      font-weight: bold;
+
+      /*      
+      */
+      background: -moz-linear-gradient(45deg,  rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 100%);
+      background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(0,0,0,0.35)), color-stop(100%,rgba(0,0,0,0)));
+      background: -webkit-linear-gradient(45deg,  rgba(0,0,0,0.35) 0%,rgba(0,0,0,0) 100%);
+      background: -o-linear-gradient(45deg,  rgba(0,0,0,0.35) 0%,rgba(0,0,0,0) 100%);
+      background: -ms-linear-gradient(45deg,  rgba(0,0,0,0.35) 0%,rgba(0,0,0,0) 100%);
+      background: linear-gradient(45deg,  rgba(0,0,0,0.35) 0%,rgba(0,0,0,0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59000000', endColorstr='#00000000',GradientType=1 );
+
+}
+//list item
+.archive .event .col-md-12,
+.archive .event .col-md-6{
+      padding: 0;
+}
+
+/* EVENT SINGLE*/
+.single .event .published{
+      margin-bottom: 20px;
+
+}
+.single .event .col-lg-6{
+      padding: 5px;
+}
+.single article.event{
+      position: relative;
+}
+.single .event-meta{
+      margin-top: 10px;
+      margin-bottom: 10px;
+}
+
+/* EVENT ARCHIVE */
+
+ul.event-list li{ //item
+                  border: 1px solid black;
+                  border-radius: 5px;
+                  overflow: hidden;
+                  position: relative;
+                  margin-bottom: 10px;
+                                               margin-left: 10px;
+
+}
+
+ul.event-list h2.entry-title{//item title
+                             border-bottom: 1px solid black;
+                             font-size: @font-size-h3;
+                             text-indent: 5px;
+                             text-overflow: ellipsis; 
+                             white-space: nowrap;
+                             overflow: hidden; 
+                             margin: 0;
+                             padding: 10px 0;
+}
+ul.event-list .entry-summary p{//item summary
+                               padding: 5px;
+}
+
+ul.event-list .thumb-detail{      //item description
+                                  position: absolute;
+                                  background-color: #fff;
+                                  right: 0;
+                                  bottom: 25px;
+                                  padding: 2px;
+                                  z-index: 100;
+                                  max-width: 300px;
+
+                                  border-bottom-left-radius: 5px;
+                                  border-top-left-radius: 5px;
+
+}
+
+//fix
+ul.event-list .thumb-detail .glyphicon{      //item description
+                                             top: 3px;
+}
+
+/*  ---- CALENDAR ----*/
+#calendar{
+      width: 80%;
+      font-size: 15px;
+      margin: 0 auto;
+}
+#calendar.fc{
+      border: 1px solid black;
+      border-radius: 5px;
+      overflow: hidden;
+      
+}
+#calendar .fc-header{
+      background: linear-gradient(45deg,  rgba(0,0,0,0.35) 0%,rgba(0,0,0,0) 100%);
+
+      border-bottom: 1px solid black;
+      
+
+}
+/*      
+#calendar .fc-content{
+}
+*/
+#calendar .fc-header-center{
+      /*padding-right:  20px;*/
+      padding-top: 5px;
+
+
+}
+#calendar .fc-header-title h2{
+      font-size: 22px;
+      margin-bottom: 5px;
+}
+#calendar .fc-day-header{
+      padding-top: 7px;
+      padding-bottom: 7px;
+      color: #333;
+      /*background-color: #d4d4d4;*/
+}
+#calendar .fc-today{
+      background-color:#0583F1 !important;
+}
+#calendar .fc-other-month{
+      color: #777;
+}
+#calendar .fc-day:hover{
+      background-color:#0099ff;
+      font-size: 22px;
+}
+#calendar .fc-day:hover .fc-day-number{
+      margin-top: 3px;
+}
+#calendar .fc-day{
+      cursor: pointer;
+}
+
+#calendar .fc-day-number{
+      text-align: center;
+      float: none;
+      margin-top: 7px;
+}

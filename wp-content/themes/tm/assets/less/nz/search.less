@@ -1,0 +1,36 @@
+//positioning menu-search
+#main-menu-top,
+.menu-search{
+      position: relative;
+}
+.nav-justified > li.menu-search {
+      position: absolute;
+      right: 0;
+      top: 0;
+}
+
+//search
+.menu-search-form-wrapper{
+      display: none;
+      position: absolute;
+      z-index: 100;
+      right: -10px;
+      top: 50px;
+      width: 400px;
+}
+.menu-search-form-wrapper input.search-field{
+      width: 50px;
+      float: right;
+      -webkit-transition: width 0.5s ease-in-out;
+      -moz-transition: width 0.5s ease-in-out;
+      -o-transition: width 0.5s ease-in-out;
+      transition: width 0.5s ease-in-out;
+}
+.menu-search-form-wrapper input.search-field:focus{
+      width:399px;
+      height: 40px;
+      -webkit-transition: width 0.5s ease-in-out;
+      -moz-transition: width 0.5s ease-in-out;
+      -o-transition: width 0.5s ease-in-out;
+      transition: width 0.5s ease-in-out;
+}

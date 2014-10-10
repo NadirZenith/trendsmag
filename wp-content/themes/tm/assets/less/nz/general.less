@@ -1,0 +1,155 @@
+//archives
+.archive ul,
+.home ul{
+      list-style: none;
+      padding: 0;
+}
+.nz-list h1.list-head{
+
+}
+
+/*
+      COL-LIST 
+
+      LISTA DE COLUNAS
+
+      EX:
+      [-----] [-----] [-----]
+      [-----] [-----] [-----]
+      [-----] [-----] [-----]
+*/
+ul.col-list h2.entry-title{
+      margin-top: 5px;
+      font-size: @font-size-base;
+      line-height:20px;
+      height:40px;
+      overflow: hidden;
+      /*text-overflow: ellipsis;*/
+}
+/*
+      END row-list
+*/
+//single
+.single h1.entry-title{
+      margin-top: 5px;
+}
+
+.single .entry-content{
+      font-family:  Tahoma, Geneva, sans-serif;
+}
+//post meta
+.published{
+      font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+
+}
+
+//thumbnails
+// @todo nz prueba
+/*
+*/
+ul.col-list .thumbnail,
+ul.row-list .thumbnail{
+      border-radius: 4px;
+} 
+
+ul.row-list,
+ul.col-list{
+      list-style: none;
+}
+
+.archive .thumbnail:hover,
+.home .thumbnail:hover{
+      box-shadow:         0px 0px 7px 0px rgba(50, 50, 50, 0.75);
+}
+
+
+.list-heading{
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      margin-top: 15px;
+      margin-bottom: 25px;
+      position: relative;
+
+}
+.list-heading .list-head{
+      text-align: center;
+      margin-top: 10px;
+      text-indent: 27px;
+}
+.list-heading .arrow{
+      width: 20px;
+      height: 11px;
+      background-image: url('arrow-simple.png');
+      background-repeat: no-repeat;
+      position: absolute;
+      left: 50%;	
+      margin-left: -10px;;
+
+}
+/* Glyph, by Harry Roberts */
+/*
+*/
+.list-heading hr{ 
+      padding: 0; 
+      border: none; 
+      border-top: medium double #333; 
+      color: #333; 
+      text-align: center; 
+}
+.list-heading hr:after { 
+      content: "§";
+      display: inline-block; 
+      position: relative; 
+      top: -0.7em; 
+      font-size: 1.5em;
+      padding: 0 0.25em;
+      background: white;
+}
+
+.list-related{
+      padding: 0;
+}
+.list-related li
+{
+      margin: 1%;
+      width: 31%;
+      padding: 0;
+}
+
+//labels
+.label{
+
+      margin-left: 5px;
+      border: 1px solid #000;
+      font-size: 90%;
+
+}
+.label:hover{
+      background-color: #000;
+}
+.label:hover a{
+      color: #fff;
+}
+
+//next previous links
+.next-prev-links{
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      overflow: hidden;
+}
+.next-prev-links .prev{
+      float: left;
+      border-right: 1px solid black;
+      width: 49%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+}
+.next-prev-links span{
+      /*font-size: 24px;*/
+}
+
+.next-prev-links .next{
+      float: left;
+      width: 49%;
+
+}

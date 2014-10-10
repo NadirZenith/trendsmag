@@ -1,0 +1,96 @@
+
+//transition for navbar fixed
+.navbar-default{
+      border-left: none;
+      border-right: none;
+      background-color: rgb(255,255,255);
+      transition: background-color 1000ms linear;
+
+}
+
+.navbar-fixed-top.navbar-default{
+      //background
+      background-color: rgba(248,248,248,0.7);
+
+
+      /*  box shadow  
+      */
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+
+      transition: background-color 1000ms linear, box-shadow 1000ms linear;
+}
+
+/*
+-webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+ -webkit-transition: background-color 1000ms linear;
+-moz-transition: background-color 1000ms linear;
+-o-transition: background-color 1000ms linear;
+-ms-transition: background-color 1000ms linear;
+*/
+
+//center navbar items
+.navbar-nav.nav-justified > li{
+      float:none;
+}
+
+.navbar .nav > li > a{
+      font-size:      @font-size-base;
+      color: black;
+}
+
+
+
+
+/*body.navbar-fixed-fix*/
+.navbar-fixed-fix .site-logo{
+      visibility: hidden;
+}
+
+/* HOME MENU TM DYNAMIC */
+.navbar-default .menu-tm{
+      position: relative;
+}
+.navbar-default .menu-tm img{
+      position: absolute;
+      top: 0px;
+      left: 10px;
+      width: 80px;
+      visibility: hidden;
+}
+
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { 
+      .navbar-default .menu-tm img{
+            visibility: hidden;
+            
+/*            
+*/
+            opacity: 0;//opacidade ->  0 opque
+            transition:visibility 0s linear 0.2s,
+                  opacity 0.2s linear;
+
+      }
+
+      .navbar-default.navbar-fixed-top .menu-tm img{
+            visibility: visible;
+            
+/*            
+*/
+            opacity: 1;//opacidade ->  opaque
+            transition-delay:0s;
+
+      }
+}
+
+/* Medium devices (desktops, 992px and up) 
+@media (min-width: @screen-md-min) { ... }
+*/
+
+/* Large devices (large desktops, 1200px and up) 
+@media (min-width: @screen-lg-min) { ... }
+*/
