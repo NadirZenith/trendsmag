@@ -6,6 +6,8 @@
                               <h1>
                                     <a href="<?php echo get_home_url() ?>" title="TrendsMag">
                                           <img height="90" src="<?php echo nz_get_image_asset( 'logo-v9.png' ) ?>" />
+                                          <!--<img height="120" src="<?php echo nz_get_image_asset( 'white-site.png' ) ?>" />-->
+                                          <!--<img height="120" src="<?php echo nz_get_image_asset( 'black-site.png' ) ?>" />-->
                                     </a>
                               </h1>
                         </div>

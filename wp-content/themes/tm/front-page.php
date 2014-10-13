@@ -38,11 +38,7 @@ if ( !$wp_query->is_paged() ) {
 
 <!-- FRONT PAGE PAGER ??-->
 <?php if ( $wp_query->max_num_pages > 1 ) : ?>
-      <style>
-            .post-nav{
-                  /*display: none;*/
-            }
-      </style>
+     
       <nav class="post-nav">
             <ul class="pager">
                   <li class="previous"><?php next_posts_link( __( '&larr; Older posts', 'roots' ) ); ?></li>

@@ -22,8 +22,9 @@
             // All pages
             common: {
                   init: function() {
+                        console.log('init');
                         // JavaScript to be fired on all pages
-
+                        //$('.post-nav').css('display', 'none');
                         //dropdow on hover plugin
                         $('.dropdown-toggle').dropdownHover();
 
@@ -40,8 +41,8 @@
                          * 
                          */
                         $(window).scroll(function() {
-                              console.log(pos);
-                              console.log($(this).scrollTop());
+                              /*console.log(pos);*/
+                              /*console.log($(this).scrollTop());*/
 
                               if ($(this).scrollTop() > pos) {//fix navbar top
                                     nav.addClass("navbar-fixed-top");//navbar-fixed
@@ -74,6 +75,20 @@
                                     });
 
                               }
+                        }); //Performs a smooth page scroll to an anchor on the same page.
+                        /*                        
+                         * */
+                        $('a[href*=#]:not([href=#])').click(function() {
+                              if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+                                    var target = $(this.hash);
+                                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                                    if (target.length) {
+                                          $('html,body').animate({
+                                                scrollTop: target.offset().top - 70//offset top bar
+                                          }, 1000);
+                                          return false;
+                                    }
+                              }
                         });
 
                         $(window).scroll();
@@ -96,28 +111,14 @@
                               return false;
                         });
 
-                        //Performs a smooth page scroll to an anchor on the same page.
-                        /*                        
-                         * */
-                        $('a[href*=#]:not([href=#])').click(function() {
-                              if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-                                    var target = $(this.hash);
-                                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                                    if (target.length) {
-                                          $('html,body').animate({
-                                                scrollTop: target.offset().top - 70//offset top bar
-                                          }, 1000);
-                                          return false;
-                                    }
-                              }
-                        }); 
+
 
                   }
             },
             // Home page
             home: {
                   init: function() {
-                        console.log('home');
+                        /*console.log('home');*/
                   }
             },
             // subir-event page, note the change from subit-evento to subir_evento.
@@ -187,72 +188,3 @@
       $(document).ready(UTIL.loadEvents);
 
 })(jQuery); // Fully reference jQuery after this point.
-/*
- if (false) {
- 
- $('#show_login').click(function(e) {
- e.preventDefault();
- $('.logsign').fadeToggle(500);
- });
- 
- $('.mico.ico_search A').click(function(e) {
- e.preventDefault();
- 
- var $searcher = $('.searcher');
- if ($searcher.is(':visible')) {
- $('.searcher').fadeOut(500);
- 
- } else {
- $('.logsign').hide();
- $('.searcher').fadeIn(500);
- $('#SearchPhrase').focus();
- }
- });
- 
- //enviar al pulsar enter
- $('#SearchPhrase').keypress(function(e) {
- var code = (e.keyCode ? e.keyCode : e.which);
- if (code === 13) { //Enter keycode
- var phrase = $(this).val().replace(' ', '+');
- window.location = '/posts/search/' + phrase;
- }
- });
- $('#SearchPhrase').focusout(function(e) {
- $('.searcher').fadeOut(500);
- });
- 
- 
- 
- //LOGIN y SIGNUP
- $('.sign_trad A').click(function(e) {
- e.preventDefault();
- 
- $(this).parent().parent().find('div.sign_face, div.sign_twit').slideUp(1000);
- $(this).parent().parent().parent().parent().parent().find('form').slideDown(1000);
- });
- 
- //RESET LOGIN Y SIGNUP FANCYBOX: DEJAMOS EL FORMULARIO ESCONDIDO 
- $('body').on('click', '.showSignUpForm, .showLoginForm', function(e) {
- e.preventDefault();
- $('div.sign_face, div.sign_twit').show();
- $('#signup form, #login form').hide();
- });
- 
- 
- //SIGN UP VALIDATE
- var validator = $('#formSignUp').validate({
- rules: {
- 'data[NewUser][name]': "required",
- 'data[NewUser][email]': "required email",
- 'data[NewUser][password]': {
- required: true,
- minlength: 5
- },
- 'data[NewUser][repassword]': {
- required: true,
- equalTo: "#NewUserPassword"
- },
- }
- });
- }
- */

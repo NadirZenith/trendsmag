@@ -16,7 +16,7 @@ if ( !$wp_query->is_paged() ) {
 }
 ?>
 
-<section class="row">
+<section class="row" style="margin-top: 20px;">
       <?php if ( have_posts() ): ?>
             <?php
             $tpl_loop = array(
