@@ -85,7 +85,7 @@ class PLL_Frontend_Filters extends PLL_Filters{
 	public function translate_page($v) {
 		// FIXME comes too late when language is set from content
 		static $posts = array(); // the fonction may be often called so let's store the result
-/*d('here');*/
+
 		// returns the current page if there is no translation to avoid ugly notices
 		return isset($this->curlang) && $v && (isset($posts[$this->model->blog_id][$v]) || $posts[$this->model->blog_id][$v] = $this->model->get_post($v, $this->curlang)) ? $posts[$this->model->blog_id][$v] : $v;
 	}
