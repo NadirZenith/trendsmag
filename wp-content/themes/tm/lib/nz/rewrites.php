@@ -17,7 +17,7 @@ class NZ_Rewrite_Files {
             $roots_new_non_wp_rules = array(
                   /**
                    * @todo nz get web/wp-content/uploads/ dynamicaly
-                   *                   */
+                   * */
                   'files/(.*)/(.*)/(.*)/(.*)\.(jpg|jpeg|png|gif)$' => 'web/wp-content/uploads' . '/cache/$1/$2/$3/$4.$5'
                       /* 'files/(.*)/(.*)/(.*)\.(jpg|jpeg|png|gif)$' => 'wp-content/uploads' . '/cache/$1/$2/$3.$4' */
             );
@@ -28,6 +28,9 @@ class NZ_Rewrite_Files {
 
       public function nz_clean_files_urls( $img_tag ) {
             if ( strpos( $img_tag, 'wp-content/uploads/' ) > 0 ) {
+                  /**
+                   * @todo nz get web/wp-content/uploads/ dynamicaly
+                   */
                   $img_tag = str_replace( 'web/wp-content/uploads/cache/', 'files/', $img_tag );
             }
             return $img_tag;
