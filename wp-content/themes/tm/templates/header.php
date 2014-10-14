@@ -2,10 +2,6 @@
       <div class="container-fluid site-logo">
             <div class="row">
                   <div class="col-xs-8 col-md-4 col-xs-offset-1">
-                        <?php 
-                        var_dump( get_home_url());
-                        var_dump( get_site_url());
-                        ?>
                         <div class="text-center">
                               <h1>
                                     <a href="<?php echo get_home_url() ?>" title="TrendsMag">
