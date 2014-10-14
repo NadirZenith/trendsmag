@@ -1,7 +1,7 @@
 <?php while ( have_posts() ) : the_post(); ?>
 
       <?php
-      d(  pll_current_language());
+      /*d(  pll_current_language());*/
       global $post;
       if ( $post_id = pll_get_post( $post->ID, pll_current_language() ) ) { // get translated post (in current language) if exists
             /*$post = get_post( $post_id );*/
