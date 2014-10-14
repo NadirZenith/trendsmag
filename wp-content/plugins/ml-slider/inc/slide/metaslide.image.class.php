@@ -348,11 +348,10 @@ class MetaImageSlide extends MetaSlide {
         if ( strlen( $anchor_attributes['href'] ) ) {
             $html = $this->build_anchor_tag( $anchor_attributes, $html );
         }
-        /*d($anchor_attributes);*/
+
         // add caption
         if ( strlen( $slide['caption'] ) ) {
-            /*$html .= '<div class="caption-wrap"><div class="caption">' . $slide['caption'] . '</div></div>';*/
-            $html .= '<a href="'.$anchor_attributes['href'].'" class="caption-wrap"><span  class="caption">' . $slide['caption'] . '</span></a>';
+            $html .= '<div class="caption-wrap"><div class="caption">' . $slide['caption'] . '</div></div>';
         }
 
         $thumb = isset( $slide['data-thumb'] ) && strlen( $slide['data-thumb'] ) ? " data-thumb=\"{$slide['data-thumb']}\"" : "";
