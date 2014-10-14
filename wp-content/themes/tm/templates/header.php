@@ -14,7 +14,7 @@
                   </div>
                   <div class="col-md-4 col-xs-4 text-center col-xs-offset-3">
                         <?php get_template_part( 'templates/nz/social/social-icons-top' ); ?>
-                        <?php nz_fb_like_iframe( 'https://www.facebook.com/Trendencias.Magazine' ); ?>
+                        <?php nz_fb_like_iframe( 'https://www.facebook.com/trendsmag.net' ); ?>
                   </div>
             </div>
       </div>
