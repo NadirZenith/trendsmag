@@ -15,7 +15,10 @@ class NZ_Rewrite_Files {
             global $wp_rewrite;
 
             $roots_new_non_wp_rules = array(
-                  'files/(.*)/(.*)/(.*)/(.*)\.(jpg|jpeg|png|gif)$' => 'wp-content/uploads' . '/cache/$1/$2/$3/$4.$5'
+                  /**
+                   * @todo nz get web/wp-content/uploads/ dynamicaly
+                   *                   */
+                  'files/(.*)/(.*)/(.*)/(.*)\.(jpg|jpeg|png|gif)$' => 'web/wp-content/uploads' . '/cache/$1/$2/$3/$4.$5'
                       /* 'files/(.*)/(.*)/(.*)\.(jpg|jpeg|png|gif)$' => 'wp-content/uploads' . '/cache/$1/$2/$3.$4' */
             );
 
@@ -156,7 +159,7 @@ class NZRoutes {
 add_action( 'init', 'nz_add_tags_rules' );
 
 function nz_add_tags_rules() {
-      $post_types= array( 'news', 'fashion', 'art', 'music', 'street-trend', 'top-place' );
+      $post_types = array( 'news', 'fashion', 'art', 'music', 'street-trend', 'top-place' );
       $post_types_regex = '(' . join( '|', $post_types ) . ')';
 
       //'tag/([^/]+)/page/?([0-9]{1,})/?$'
@@ -173,13 +176,13 @@ function nz_add_tags_rules() {
 /**
  * dump wp rewrite
  */
-/*add_action( 'wp_footer', 'nz_dump_wp_rewrite' );*/
+/* add_action( 'wp_footer', 'nz_dump_wp_rewrite' ); */
 
-/*function nz_dump_wp_rewrite() {
-      global $wp_rewrite;
+/* function nz_dump_wp_rewrite() {
+  global $wp_rewrite;
 
-      d( $wp_rewrite);
-}*/
+  d( $wp_rewrite);
+  } */
 
 return;
 ?>
