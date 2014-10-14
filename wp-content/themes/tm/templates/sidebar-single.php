@@ -6,7 +6,7 @@
 
 </div>
 <div class="aside-item">
-      <?php nz_fb_like_box( 'https://www.facebook.com/Trendencias.Magazine' ); ?>
+      <?php nz_fb_like_box( 'https://www.facebook.com/trendsmag.net' ); ?>
 </div>
 <?php dynamic_sidebar( 'sidebar-primary' ); ?>
 
