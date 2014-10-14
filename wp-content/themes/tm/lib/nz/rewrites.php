@@ -28,7 +28,7 @@ class NZ_Rewrite_Files {
 
       public function nz_clean_files_urls( $img_tag ) {
             if ( strpos( $img_tag, 'wp-content/uploads/' ) > 0 ) {
-                  $img_tag = str_replace( 'wp-content/uploads/cache/', 'files/', $img_tag );
+                  $img_tag = str_replace( 'web/wp-content/uploads/cache/', 'files/', $img_tag );
             }
             return $img_tag;
       }
