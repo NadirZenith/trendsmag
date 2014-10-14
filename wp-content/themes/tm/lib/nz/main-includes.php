@@ -43,6 +43,7 @@ include_once 'search-menu-item.php';
 include_once 'home-menu-item.php';
 include_once 'social/facebook-config.php';
 include_once 'social/twitter-config.php';
+include_once 'maintenance.php';
 /* include_once 'sidebar.php'; */
 
 
