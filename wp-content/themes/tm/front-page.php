@@ -2,7 +2,7 @@
 <!-- FRONT PAGE SLIDER -->
 <?php
 if ( !$wp_query->is_paged() ) {
-      echo do_shortcode( '[metaslider id=49]' ); //121, 49
+      echo do_shortcode( '[metaslider id=18]' ); //121, 49
 }
 ?>
 
