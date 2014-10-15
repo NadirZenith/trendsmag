@@ -23,6 +23,7 @@ $roots_includes = array(
       'lib/comments.php', // Custom comments modifications
       'lib/scripts.php', // Scripts and stylesheets
       'lib/extras.php', // Custom functions
+      /*'nz/main.php', // Custom functions*/
 );
 
 foreach ( $roots_includes as $file ) {
