@@ -7,17 +7,21 @@
                   </a>
             </li>
             <li>
-                  <a href="#link" >
+                  <a href="https://twitter.com/TrendsMagBCN" >
                         <span class="social-twitter"></span>
                   </a>
             </li>
+            <?php
+            /*
+              <li>
+              <a href="#link" >
+              <span class="social-youtube"></span>
+              </a>
+              </li>
+             */
+            ?>
             <li>
-                  <a href="#link" >
-                        <span class="social-youtube"></span>
-                  </a>
-            </li>
-            <li>
-                  <a href="#link" >
+                  <a href="https://pinterest.com/TrendsMag" >
                         <span class="social-pinterest"></span>
                   </a>
             </li>
