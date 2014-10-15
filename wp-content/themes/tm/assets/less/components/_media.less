@@ -1,10 +1,10 @@
 // Captions
 .wp-caption {
-    &:extend(.thumbnail all);
+      &:extend(.thumbnail all);
 }
 
 .wp-caption-text {
-    &:extend(.thumbnail .caption);
+      &:extend(.thumbnail .caption);
 }
 
 // Gallery shortcode
@@ -13,7 +13,7 @@
       overflow: hidden;
 }
 .gallery-row {
-    padding: (@line-height-computed / 2) 0;
+      padding: (@line-height-computed / 2) 0;
 }
 
 .gallery-item{
@@ -38,4 +38,12 @@
       left: 0;
       width: 100%;
       height: 100%;
+} 
+.entry-content .thumbnail .alignleft{
+      float: left;
+      margin: 5px;
+}
+.entry-content .thumbnail .alignright{
+      float: right;
+      margin: 5px;
 }

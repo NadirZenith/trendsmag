@@ -111,7 +111,12 @@
                               return false;
                         });
 
-
+                        //fancybox
+                        //gallery
+                        /*$('.fancybox').fancybox();*/
+                        $("a[rel=nz_gallery]").fancybox();
+                        $("a[rel=nz_fancybox]").fancybox();
+                        /*$('dt.gallery-icon a').fancybox();*/
 
                   }
             },
