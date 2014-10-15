@@ -155,5 +155,5 @@ function nz_gallery_attach_img_tag( $id ) {
 
       $image_info = nz_get_image( $id, 1000 );
 
-      return '<a href="' . $image_info[ 0 ] . '">' . $thumb_tag . '</a>';
+      return '<a rel="nz_gallery" href="' . $image_info[ 0 ] . '">' . $thumb_tag . '</a>';
 }

@@ -64,8 +64,10 @@ function nz_dump_print() {
             d( $value );
       }
       global $wp_query;
+      global $wp_rewrite;
       echo '<p>';
-      d($wp_query);
+      d( $wp_query );
+      d( $wp_rewrite );
       echo '</p>';
 }
 

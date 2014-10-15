@@ -102,7 +102,7 @@ function nz_send_image_to_editor( $html, $id, $caption, $title, $align, $url, $s
       $html = nz_get_img_tag( $img_array[ 0 ], $alt, $img_array[ 1 ], $img_array[ 2 ], $class, $caption );
 
       if ( $url )
-            $html = '<a href="' . esc_attr( $img_array[ 0 ] ) . '" class="thumbnail">' . $html . '</a>';
+            $html = '<a rel="nz_fancybox" href="' . esc_attr( $img_array[ 0 ] ) . '" class="thumbnail">' . $html . '</a>';
 
       return $html;
 }
