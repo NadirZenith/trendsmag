@@ -17,6 +17,8 @@ nbproject/
 /wp-content/plugins/all-in-one-wp-security-and-firewall/logs/
 /wp-content/aiowps_backups/
 
+/wp-content/mu-plugins/
+
 /wp-content/plugins/core-control/
 /wp-content/plugins/debug-*/
 /wp-content/plugins/developer/
