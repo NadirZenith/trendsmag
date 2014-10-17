@@ -4,6 +4,7 @@
  * Clean up the_excerpt()
  */
 function roots_excerpt_more($more) {
+      return '...';
         return ' &hellip; <a href="' . get_permalink() . '">' . __('Continue', 'roots') . '</a>';
 }
 
