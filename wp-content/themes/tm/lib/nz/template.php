@@ -3,9 +3,12 @@
 /**
  *  Get tags like <span class="label label-default label-'{{TAG->slug}}'">tag</span>
  */
-function nz_the_tags( $before = "", $after = "" ) {
+function nz_the_tags( $before = "", $after = "", $limit = false ) {
       $tags = get_the_tags();
       if ( is_array( $tags ) ) {
+            if ( $limit ) {
+                  $tags = array_slice( $tags, 0, $limit );
+            }
             echo $before;
             foreach ( $tags as $value ) {
                   ?>
