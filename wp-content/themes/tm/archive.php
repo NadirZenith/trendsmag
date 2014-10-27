@@ -19,20 +19,19 @@ if ( !$wp_query->is_paged() ) {
 <section class="row" style="margin-top: 20px;">
       <?php if ( have_posts() ): ?>
             <?php
-            $tpl_loop = array(
-                  'query' => $wp_query,
+             $tpl_loop = array(
                   'container' => array(
                         'tag' => 'ul',
                         'id' => '',
-                        'class' => 'col-list'
+                        'class' => 'nz-posts-list-1 infinite-src'
                   ),
                   'item_container' => array(
                         'tag' => 'li',
                         'id' => '',
-                        'class' => 'col-sm-4 col-md-4 col-xs-12'
+                        'class' => 'col-xs-6 col-sm-6  col-md-4 col-lg-4'
                   ),
                   'item_template' => array(
-                        'template_part' => 'templates/nz/archive/list-item'
+                        'template_part' => 'templates/nz/archive/nz-posts-list-1-item'
                   )
             );
 

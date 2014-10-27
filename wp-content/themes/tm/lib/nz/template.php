@@ -10,15 +10,24 @@ function nz_the_tags( $before = "", $after = "", $limit = false ) {
                   $tags = array_slice( $tags, 0, $limit );
             }
             echo $before;
-            foreach ( $tags as $value ) {
-                  ?>
-                  <span class="label label-default label-<?php echo $value->slug ?>">
-                        <a href="#link" class="text-capitalize">
-                              <?php echo $value->name ?>
-                        </a>
-                  </span>
+            ?>
+            <ul class="the-tags">
                   <?php
-            }
+                  foreach ( $tags as $tag ) {
+                        ?>
+                        <li>
+                              <span class="label label-default label-<?php echo $tag->slug ?>">
+                                    <a href="<?php echo get_term_link( $tag ) ?>" class="text-capitalize">
+                                          <?php echo $tag->name ?>
+                                    </a>
+                              </span>
+                        </li>
+                        <?php
+                  }
+                  ?>
+            </ul>
+
+            <?php
             echo $after;
       }
 }
@@ -310,6 +319,7 @@ class NzTplLoop {
 function nz_get_next_prev_links() {
       ?>
       <div class="next-prev-links">
+
             <div class="prev text-center">
                   <?php
                   /* previous_post_link( 'Previous post: %link', '[ %title ]' ); */
@@ -319,17 +329,15 @@ function nz_get_next_prev_links() {
                   if ( $pst ) {
                         ?>
                         <a href="<?php echo get_permalink( $pst ) ?>">
-                              <span class="h2">Anterior</span>
+                              <span class="h3">Anterior</span>
                               <br>
                               <span class="h4"><?php echo $pst->post_title ?></span>
                         </a>
                         <?php
                   }
                   ?>
-
-
-
             </div>
+
             <div class="next text-center">
                   <?php
                   /* next_post_link( 'Next post: %link', '[ %title ]' ); */
@@ -340,16 +348,13 @@ function nz_get_next_prev_links() {
                   if ( $pst ) {
                         ?>
                         <a href="<?php echo get_permalink( $pst ) ?>">
-                              <span class="h2">Siguiente</span>
+                              <span class="h3">Siguiente</span>
                               <br>
                               <span class="h4"><?php echo $pst->post_title ?></span>
                         </a>
                         <?php
                   }
                   ?>
-
-
-
             </div>
       </div>
       <?php
@@ -442,7 +447,7 @@ function nz_related_content() {
             'container' => array(
                   'tag' => 'ul',
                   'id' => '',
-                  'class' => 'col-list list-related'
+                  'class' => 'nz-posts-list-1 list-related'
             ),
             'item_container' => array(
                   'tag' => 'li',
@@ -450,7 +455,8 @@ function nz_related_content() {
                   'class' => 'col-md-4 col-sm-6 col-xs-12'
             ),
             'item_template' => array(
-                  'template_part' => 'templates/nz/archive/related-list-item'
+                  'template_part' => 'templates/nz/archive/nz-posts-list-1-item'
+            /* 'template_part' => 'templates/nz/archive/related-list-item' */
             )
       );
       $loop = new NzTplLoop( $tpl_loop );

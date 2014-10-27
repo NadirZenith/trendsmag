@@ -25,21 +25,22 @@
                         console.log('init');
                         // JavaScript to be fired on all pages
                         //$('.post-nav').css('display', 'none');
+
                         //dropdow on hover plugin
-                        $('.dropdown-toggle').dropdownHover();
+                        /*                        
+                         $('.dropdown-toggle').dropdownHover();
+                         
+                         //make top links clicable
+                         $('nav > ul > li:has(ul) > a').on('click', function() {
+                         window.location.href = this.href;
+                         });
+                         * */
 
-                        //make top links clicable
-                        $('nav > ul > li:has(ul) > a').on('click', function() {
-                              window.location.href = this.href;
-                        });
-
-                        // fixed menu on scroll    
+                        // ** fixed menu on scroll    
                         var nav = $('.navbar');
                         /*console.log(nav.outerHeight());*/
                         var pos = nav.offset().top;
-                        /*
-                         * 
-                         */
+
                         $(window).scroll(function() {
                               /*console.log(pos);*/
                               /*console.log($(this).scrollTop());*/
@@ -75,9 +76,11 @@
                                     });
 
                               }
-                        }); //Performs a smooth page scroll to an anchor on the same page.
-                        /*                        
-                         * */
+                        });
+                        $(window).scroll();
+
+
+                        // ** Performs a smooth page scroll to an anchor on the same page.                        
                         $('a[href*=#]:not([href=#])').click(function() {
                               if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
                                     var target = $(this.hash);
@@ -91,10 +94,9 @@
                               }
                         });
 
-                        $(window).scroll();
 
-                        //search menu
 
+                        // ** search menu
                         $('.menu-search a.search').on('click', function(e) {
                               /*$btn = $(this);*/
                               $search_form = $('.menu-search-form-wrapper');
@@ -111,19 +113,62 @@
                               return false;
                         });
 
-                        //fancybox
+                        // ** fancybox
                         //gallery
                         /*$('.fancybox').fancybox();*/
                         $("a[rel=nz_gallery]").fancybox();
                         $("a[rel=nz_fancybox]").fancybox();
                         /*$('dt.gallery-icon a').fancybox();*/
 
+
+                        // ** infinite scroll
+                        /*$infinite_scroll_target = ;*/
+
+                        $('footer.content-info').after(
+                                $('<div class="wrap container"> <div class="row"> <ul class="nz-posts-list-1" id="infsc-target"> </ul> </div> </div>')
+                                );
+
+
+                        $('.infinite-src').infinitescroll({
+                              binder: $(window), // $('.infinite-home'), // scroll on this element rather than on the window
+                              navSelector: "nav.post-nav",
+                              nextSelector: "nav.post-nav a:first",
+                              itemSelector: ".infinite-src li",
+                              appendCallback: false,
+                              errorCallback: function() {
+                                    console.log('errorCallback');
+                              }
+                        }, function(list) {
+                              $('#infsc-target').append(list);
+                        });
+
+                        //nz-posts-list-1 js
+                        $(document).on('click', '.slideup-trig', function(e) {
+
+                              e.preventDefault();
+                              var $btn = $(e.currentTarget);
+
+                              $box = $btn.next('.slideup-box');
+                              $box.css("bottom", "3px");
+
+
+                        });
+
+
+                        $(document).on('mouseleave', 'article', function(e) {
+                              var $article = $(e.currentTarget);
+
+                              var $box = $article.find('.slideup-box');
+
+                              $box.css('bottom', "-100%");
+                        });
+
                   }
             },
             // Home page
             home: {
                   init: function() {
-                        /*console.log('home');*/
+                        console.log('home');
                   }
             },
             // subir-event page, note the change from subit-evento to subir_evento.

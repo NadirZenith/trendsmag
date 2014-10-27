@@ -1,5 +1,5 @@
 <footer class="content-info" role="contentinfo" >
-      <div class="container-fluid" style="padding-bottom: 20px;">
+      <div class="" style="padding-bottom: 50px;">
             <?php
             if ( has_nav_menu( 'footer_navigation' ) ) :
                   wp_nav_menu(

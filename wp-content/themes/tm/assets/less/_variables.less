@@ -7,8 +7,27 @@
 
 // Glyphicons path
 // -------------------------
-@icon-font-path:        "../fonts/icons/";
-@tm-font-path:        "../fonts/";
+/*
+*/
+@icon-font-path:        "../fonts/icons/glyphicon/";
+@icon-font-name:          "glyphicons-halflings-regular";
+@icon-font-svg-id:        "glyphicons_halflingsregular";
+
+
+/*
+// font awesome path
+@icon-font-path:        "../fonts/icons/font-awesome/";
+@icon-font-name:        "fontawesome-webfont";
+@icon-font-svg-id:        "fontawesome-webfont";
+*/
+
+@fa-font-path:        "../fonts/icons/font-awesome/";
+ 
+
+
+//** File name for all font files.
+//** Element ID within SVG icon file.
+
 
 //== Typography
 //
@@ -17,7 +36,8 @@
 /*@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 /*@font-family-sans-serif:  "eight_oneregular", Helvetica, Arial, sans-serif;*/
 /*@font-family-sans-serif:  "passionone_regular", Helvetica, Arial, sans-serif;*/
-@font-family-sans-serif:  "asap_regular", Helvetica, Arial, sans-serif;
+@tm-font-path:        "../fonts/";
+@font-family-sans-serif:  "Asap Regular", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -88,7 +108,7 @@
 */
 
 @font-face {
-      font-family: 'asap_regular';
+      font-family: 'Asap Regular';
       src: url('@{tm-font-path}asap/asap-regular-webfont.eot');
       src: url('@{tm-font-path}asap/asap-regular-webfont.eot?#iefix') format('embedded-opentype'),
             url('@{tm-font-path}asap/asap-regular-webfont.woff') format('woff'),

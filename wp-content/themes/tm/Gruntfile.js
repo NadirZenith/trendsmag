@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     // Load all tasks
     require('load-grunt-tasks')(grunt);
     // Show elapsed time
-    require('time-grunt')(grunt);
+    //require('time-grunt')(grunt);
 
     var jsFileList = [
         'assets/vendor/bootstrap/js/transition.js',

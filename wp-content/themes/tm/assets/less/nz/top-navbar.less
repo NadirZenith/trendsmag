@@ -1,0 +1,101 @@
+
+//transition for navbar fixed
+.navbar-default{
+      border-left: none;
+      border-right: none;
+      background-color: rgb(255,255,255);
+      //transition: background-color 1000ms linear;
+
+}
+
+.navbar-fixed-top.navbar-default{
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+
+      //background
+      /*background-color: rgba(248,248,248,0.7);*/
+      /*transition: background-color 1000ms linear, box-shadow 1000ms linear;*/
+}
+
+//center navbar items
+.navbar-nav.nav-justified > li{
+      float:none;
+}
+
+.navbar .nav > li > a{
+      font-size:      @font-size-base;
+      color: black;
+}
+
+
+
+
+/*body.navbar-fixed-fix*/
+.navbar-fixed-fix .site-logo{
+      visibility: hidden;
+}
+
+/* HOME MENU TM DYNAMIC */
+.navbar-default .menu-tm{
+      position: relative;
+}
+.navbar-default .menu-tm img{
+      position: absolute;
+      left: 25px;
+      top: -15px;
+      width: 80px;
+
+      visibility: hidden;
+      opacity:0;
+      /*opacity:0.5;*/
+      /*transition:visibility 0s linear 0.5s,opacity 0.5s linear;*/
+
+      /*      
+            -webkit-transform: scale(0.01);
+            -moz-transform: scale(0.01);
+            -o-transform: scale(0.01);
+            -ms-transform: scale(0.01);
+      */
+      transform: scale(0.01);
+      /*transform: scale(0.5);*/
+      -webkit-transition: all 0.3s ease-in-out 0.2s;
+      -moz-transition: all 0.3s ease-in-out 0.2s;
+      -o-transition: all 0.3s ease-in-out 0.2s;
+      -ms-transition: all 0.3s ease-in-out 0.2s;
+      transition: all 0.3s ease-in-out 0.2s;
+}
+
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { 
+      .navbar-default .menu-tm img{
+
+
+      }
+      .navbar-fixed-fix .navbar-default .menu-tm img{
+            left: 10px;
+            top: 0px;
+
+            visibility:visible;
+            opacity:1;
+            /*transition-delay:0s;*/
+
+            transform: scale(1);
+
+            -webkit-transition-delay: 0.2s;
+            -moz-transition-delay: 0.2s;
+            -o-transition-delay: 0.2s;
+            -ms-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+      }
+}
+
+/* Medium devices (desktops, 992px and up) 
+@media (min-width: @screen-md-min) { ... }
+*/
+
+/* Large devices (large desktops, 1200px and up) 
+@media (min-width: @screen-lg-min) { ... }
+*/

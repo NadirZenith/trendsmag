@@ -48,7 +48,7 @@ function nz_fb_like_iframe( $url = null ) {
             $url = urlencode( $url );
             ?>
             <div class="nz-fblike-iframe">
-                  <iframe src="//www.facebook.com/plugins/like.php?href=<?php echo $url ?>&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=21&amp;appId=<?php FACEBOOK_APP_ID ?>" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
+                  <iframe src="//www.facebook.com/plugins/like.php?href=<?php echo $url ?>&amp;width=100&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=21&amp;appId=<?php FACEBOOK_APP_ID ?>" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
             </div>
             <?php
       }
@@ -81,11 +81,111 @@ function nz_fb_like_box( $url = null, $atts = array() ) {
             <div class="nz-fblikebox">
                   <div class="fb-like-box" 
                        data-href="<?php echo $url ?>" 
-                       data-colorscheme="<?php echo $atts['colorscheme']?>" 
-                       data-show-faces="<?php echo $atts['show-faces']?>" 
-                       data-header="<?php echo $atts['header']?>" 
-                       data-stream="<?php echo $atts['stream']?>" 
-                       data-show-border="<?php echo $atts['show-border']?>">
+                       data-colorscheme="<?php echo $atts[ 'colorscheme' ] ?>" 
+                       data-show-faces="<?php echo $atts[ 'show-faces' ] ?>" 
+                       data-header="<?php echo $atts[ 'header' ] ?>" 
+                       data-stream="<?php echo $atts[ 'stream' ] ?>" 
+                       data-show-border="<?php echo $atts[ 'show-border' ] ?>">
+                  </div>
+            </div>
+            <?php
+      }
+}
+
+function nz_fb_sharer( $url = null, $atts = array() ) {
+      $url = ($url) ? $url : get_permalink();
+      if ( FACEBOOK_APP_ID && $url ) {
+            /*
+             * box_count", "button_count", "button", "link", "icon_link", or "icon".
+             */
+            $atts = array_merge(
+                      array(
+                  'layout' => 'box_count',
+                  'width' => null,
+                      ), $atts
+            );
+            ?>
+            <div class="nz-fbsharebutton">
+                  <div class="fb-share-button" 
+                       data-href="<?php echo $url ?>"
+                       <?php if ( $atts[ 'layout' ] ): ?>
+                             data-layout="<?php echo $atts[ 'layout' ] ?>"
+                       <?php endif; ?>
+                       <?php if ( $atts[ 'width' ] ): ?>
+                             data-width="<?php echo $atts[ 'width' ] ?>"
+                       <?php endif; ?>
+                       >
+                  </div>
+            </div>
+            <?php
+      }
+}
+
+function nz_fb_comments( $url = null, $atts = array() ) {
+      $url = ($url) ? $url : get_permalink();
+      if ( FACEBOOK_APP_ID && $url ) {
+            /*
+             * box_count", "button_count", "button", "link", "icon_link", or "icon".
+             */
+            $atts = array_merge(
+                      array(
+                  'layout' => 'box_count',
+                  'numposts' => 5,
+                  'width' => '100%',
+                  'colorscheme' => 'light'
+                      ), $atts
+            );
+            ?>
+
+            <div class="nz-fbcomments">
+                  <div class="fb-comments"
+                       data-href="<?php echo $url ?>"
+                       <?php if ( $atts[ 'width' ] ): ?>
+                             data-width="<?php echo $atts[ 'width' ] ?>"
+                       <?php endif; ?>
+                       <?php if ( $atts[ 'numposts' ] ): ?>
+                             data-numposts="<?php echo $atts[ 'numposts' ] ?>"
+                       <?php endif; ?>
+                       <?php if ( $atts[ 'colorscheme' ] ): ?>
+                             data-colorscheme="<?php echo $atts[ 'colorscheme' ] ?>"
+                       <?php endif; ?>
+                       >
+                  </div>
+            </div>
+            <?php
+      }
+}
+
+function nz_fb_send( $url = null, $atts = array() ) {
+
+      $url = ($url) ? $url : get_permalink();
+      if ( FACEBOOK_APP_ID && $url ) {
+
+            /*
+             * box_count", "button_count", "button", "link", "icon_link", or "icon".
+             */
+            $atts = array_merge(
+                      array(
+                  'layout' => 'box_count',
+                  'kid_directed_site' => 'true',
+                  'width' => '100%',
+                  'colorscheme' => 'light'
+                      ), $atts
+            );
+            ?>
+            <div class="nz-fbsend">
+                  <div class="fb-send" 
+                       data-href="<?php echo $url ?>"
+                       <?php if ( $atts[ 'colorscheme' ] ): ?>
+                             data-colorscheme="<?php echo $atts[ 'colorscheme' ] ?>"
+                       <?php endif; ?>
+                       <?php if ( $atts[ 'kid_directed_site' ] ): ?>
+                             data-kid_directed_site="<?php echo $atts[ 'kid_directed_site' ] ?>"
+                       <?php endif; ?>
+
+
+                       >
+
                   </div>
             </div>
             <?php

@@ -8,7 +8,8 @@ function nz_add_menu_logo_item( $items, $args ) {
 
             $menu_original = '<li class="active menu-tm">'
                       . '<a href="http://lab.dev/trendsmag/">TM'
-                      . '<img src="'.  nz_get_image_asset( 'logo-mini-v2.png').'"/>'
+                      . '<img src="'.  nz_get_image_asset( 'logo/white-menu-rc1.png').'"/>'
+                      /*. '<img src="'.  nz_get_image_asset( 'logo-mini-v2.png').'"/>'*/
                       . '</a>'
                       . '</li>';
             

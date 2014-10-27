@@ -1,6 +1,6 @@
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
-      <?php get_template_part( 'templates/head' ); ?>
+      <?php get_template_part( 'templates/base/head' ); ?>
       <body <?php body_class(); ?> >
 
             <!--[if lt IE 8]>
@@ -11,7 +11,7 @@
 
             <?php
             do_action( 'get_header' );
-            get_template_part( 'templates/header' );
+            get_template_part( 'templates/base/header' );
             ?>
 
             <div class="wrap container" role="document">
@@ -35,7 +35,7 @@
                   </div><!-- /.content -->
             </div><!-- /.wrap -->
 
-            <?php get_template_part( 'templates/footer' ); ?>
+            <?php get_template_part( 'templates/base/footer' ); ?>
 
       </body>
 </html>

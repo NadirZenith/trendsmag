@@ -1,13 +1,25 @@
-<time class="published text-left" datetime="<?php echo get_the_time( 'c' ); ?>">
-      <span style="" class="glyphicon glyphicon-time"></span>
-      <?php echo get_the_date(); ?>
-</time>
+<!--<div class="clearfix2">-->
+<div class="text-right">
+      <span class="byline author vcard" >
+            <!--<?php echo __( 'By', 'roots' ); ?> -->
+            <i class="fa fa-user"></i>
+            <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" rel="author" class="fn">
+                  <?php echo get_the_author(); ?>
+            </a>
+      </span>
+      &nbsp;
+      <time class="published" datetime="<?php echo get_the_time( 'c' ); ?>">
+            <!--<i class="fa fa-clock-o"></i>-->
+            <?php echo get_the_date( 'd/m/Y' ); ?>
+      </time>
+</div>
+<!--</div>-->
 <?php
 /* echo nz_the_tags( 'in' ) */
 ?>
-<div class="byline author vcard pull-right" >
-      <?php echo __( 'By', 'roots' ); ?> 
-      <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" rel="author" class="fn">
-            <?php echo get_the_author(); ?>
-      </a>
-</div>
+
+
+<?php return; ?>
+<!--
+ by Felipe Marx 10/12/14
+-->
