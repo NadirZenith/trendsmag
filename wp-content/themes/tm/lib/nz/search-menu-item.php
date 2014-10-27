@@ -5,8 +5,7 @@ add_filter( 'wp_nav_menu_items', 'nz_add_menu_search_item', 10, 2 );
 function nz_add_menu_search_item( $items, $args ) {
       if ( $args->theme_location == "primary_navigation" ) {
 
-            $search_menu_content = '<a class="search glyphicon glyphicon-search" href="#" ></a>';
-
+            $search_menu_content = '<a class="search fa fa-search" href="#" ></a>';
             $search_form = '
                   <div class="menu-search-form-wrapper">
                         <form role="search" method="get" class="" action="' . esc_url( home_url( '/' ) ) . '">
