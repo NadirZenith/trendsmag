@@ -9,7 +9,7 @@ function nz_add_menu_logo_item( $items, $args ) {
             $class = is_front_page() ? 'active ' : '';
 
             $menu_original = '<li class="' . $class . 'menu-tm">'
-                      . '<a href="http://lab.dev/trendsmag/">TM'
+                      . '<a href="' . get_site_url() . '">TM'
                       . '<img src="' . nz_get_image_asset( 'logo/white-menu-rc1.png' ) . '"/>'
                       /* . '<img src="'.  nz_get_image_asset( 'logo-mini-v2.png').'"/>' */
                       . '</a>'
