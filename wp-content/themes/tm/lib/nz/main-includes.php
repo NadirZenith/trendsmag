@@ -24,6 +24,7 @@ include_once 'vendor/soil/soil.php'; //cleanup wordpress headers
 include_once 'vendor/wp-thumb/wpthumb.php'; //dynamic image resize
 include_once 'vendor/advanced-custom-fields/acf.php';
 include_once 'custom-fields/acf-config.php';
+include_once 'todo-pending-posts.php';
 
 
 /**
