@@ -1,6 +1,6 @@
 <?php
 
-add_filter( 'wp_nav_menu_items', 'nz_add_menu_search_item', 10, 2 );
+/*add_filter( 'wp_nav_menu_items', 'nz_add_menu_search_item', 10, 2 );*/
 
 function nz_add_menu_search_item( $items, $args ) {
       if ( $args->theme_location == "primary_navigation" ) {

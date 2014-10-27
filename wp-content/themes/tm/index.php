@@ -44,7 +44,7 @@ if ( $wp_query->is_archive() && !$wp_query->is_paged() ) {
                   'item_container' => array(
                         'tag' => 'li',
                         'id' => '',
-                        'class' => 'col-xs-6 col-sm-6 col-md-4 col-lg-4'
+                        'class' => 'col-xs-12 col-sm-6 col-md-4 col-lg-4'
                   ),
                   'item_template' => array(
                         'template_part' => 'templates/nz/archive/nz-posts-list-1-item'
@@ -72,7 +72,6 @@ if ( $wp_query->is_archive() && !$wp_query->is_paged() ) {
 
 <script>
       (function($) {
-
             //nz-posts-list-1 js
             $(document).on('click', '.slideup-trig', function(e) {
 
@@ -84,7 +83,6 @@ if ( $wp_query->is_archive() && !$wp_query->is_paged() ) {
 
 
             });
-
 
             $(document).on('mouseleave', 'article', function(e) {
                   var $article = $(e.currentTarget);
