@@ -125,9 +125,8 @@
                         /*$infinite_scroll_target = ;*/
 
                         $('footer.content-info').after(
-                                $('<div class="wrap container"> <div class="row"> <ul class="nz-posts-list-1" id="infsc-target"> </ul> </div> </div>')
+                                $('<div id="infsctarget" class="wrap container"> <div class="row"> <ul class="nz-posts-list-1" id="infsc-target"> </ul> </div> </div>')
                                 );
-
 
                         $('.infinite-src').infinitescroll({
                               binder: $(window), // $('.infinite-home'), // scroll on this element rather than on the window
@@ -137,7 +136,7 @@
                               appendCallback: false,
                               errorCallback: function() {
                                     console.log('errorCallback');
-                              }
+                              } 
                         }, function(list) {
                               $('#infsc-target').append(list);
                         });

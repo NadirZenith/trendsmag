@@ -2,28 +2,17 @@
       <div class="container site-logo">
             <div class="row">
                   <div class="col-xs-12 col-md-8 col-sm-8">
-                        <style>
-                              .site-logo img{
-                                    /*width: 80%;*/
-                              }
-                        </style>
+
                         <h1>
                               <a href="<?php echo get_home_url() ?>" title="TrendsMag">
                                     <img width="420" src="<?php echo nz_get_image_asset( 'logo/white-site-rc1.png' ) ?>" />
-                                    <?php
-                                    /*
-                                      <img height="120" src="<?php echo nz_get_image_asset( 'logo/white-site.png' ) ?>" />
-                                      <img height="120" src="<?php echo nz_get_image_asset( 'logo/black-site.png' ) ?>" />
-                                      <!--<img height="120" src="<?php echo nz_get_image_asset( 'logo/black-site-rc1.png' ) ?>" />-->
-                                      <img height="120" src="<?php echo nz_get_image_asset( 'black-site.png' ) ?>" />
-                                     */
-                                    ?>
+
                               </a>
                         </h1>
                   </div>
                   <div class="col-xs-12 col-md-4 col-sm-4">
                         <div class="pull-right" style="margin-top: 60px;">
-                              <!--<?php nz_fb_like_iframe( 'https://www.facebook.com/trendsmag.net' ); ?>-->
+                              <?php nz_fb_like_iframe( 'https://www.facebook.com/trendsmag.net' ); ?>
                               <?php get_template_part( 'templates/nz/social/social-icons-top-2' ); ?>
                         </div>
                   </div>

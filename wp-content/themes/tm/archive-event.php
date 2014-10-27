@@ -9,25 +9,15 @@
                         if ( !$first )
                               echo '</ul>';
                         echo '<h1 class="event-day ">';
-                        /*echo '<hr>';*/
+                        /* echo '<hr>'; */
                         echo $event_date->format( 'l d/m/y' );
                         echo '</h1>';
                         echo '<ul class="event-list">';
                         $first = FALSE;
                   }
-
-                  /*
-                    $event_place = get_post_meta( get_the_ID(), 'event_place_direction', TRUE );
-
-                    $lat = $event_place[ 'lat' ];
-                    $lng = $event_place[ 'lng' ];
-
-                    $result = file_get_contents( 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' . $lat . ',' . $lng . '&sensor=false' );
-                    d( $result );
-                   */
                   ?>
 
-                  <li> <?php get_template_part( 'templates/nz/archive/event-list-item'); ?> </li>
+                  <li> <?php get_template_part( 'templates/nz/archive/event-list-item' ); ?> </li>
                   <?php $control_date = $event_date; ?>
                   <?php
             endwhile;

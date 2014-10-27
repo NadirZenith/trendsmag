@@ -1,22 +1,23 @@
 
-<!-- FRONT PAGE SLIDER -->
 <?php
+global $wp_query;
+//show only on first page
 if ( !$wp_query->is_paged() ) {
       ?>
-      <section class="row nz-slider" style="margin-top: 20px;">
-            <?php
-            echo do_shortcode( '[metaslider id=18]' ); //121, 49
-            ?>
+      <section class="row ">
+            <div class="col-xs-12">
+                  <?php
+                  nz_bs_carousel( $wp_query );
+                  $wp_query->current_post = 3;
+                  ?>
+            </div>
       </section>
       <?php
 }
 ?>
 
-<!-- FRONT PAGE LOOP -->
-
-<section class="row">
+<section class="row" style="margin-top: 20px;">
       <?php if ( have_posts() ): ?>
-
             <?php
             $tpl_loop = array(
                   'container' => array(
@@ -27,7 +28,7 @@ if ( !$wp_query->is_paged() ) {
                   'item_container' => array(
                         'tag' => 'li',
                         'id' => '',
-                        'class' => 'col-xs-6 col-sm-6  col-md-4 col-lg-4'
+                        'class' => 'col-xs-6 col-sm-6 col-md-4 col-lg-4'
                   ),
                   'item_template' => array(
                         'template_part' => 'templates/nz/archive/nz-posts-list-1-item'
@@ -37,14 +38,12 @@ if ( !$wp_query->is_paged() ) {
             echo nz_tpl_loop( $tpl_loop );
             ?>
 
-
       <?php endif; ?>
-</section>
 
+</section>
 
 <!-- FRONT PAGE PAGER ??-->
 <?php if ( $wp_query->max_num_pages > 1 ) : ?>
-
       <nav class="post-nav">
             <ul class="pager">
                   <li class="previous"><?php next_posts_link( __( '&larr; Older posts', 'roots' ) ); ?></li>
@@ -52,9 +51,3 @@ if ( !$wp_query->is_paged() ) {
             </ul>
       </nav>
 <?php endif; ?>
-
-<script>
-      (function($) {
-           
-      })(jQuery);
-</script>

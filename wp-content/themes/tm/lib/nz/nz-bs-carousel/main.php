@@ -37,19 +37,13 @@ function nz_bs_carousel( $wp_query ) {
                                     ?>
                                     <?php
                                     //up
-                                    $id = get_post_thumbnail_id();
-
-                                    $alt = get_the_title();
-                                    /* $title = $title ? 'title="' . esc_attr( $title ) . '" ' : ''; */
-
-                                    $thumb = nz_get_thumb( $id, null, 330 );
-                                    /* d( $thumb ); */
-                                    ?>
-                                    <!--<img src="<?php echo $thumb[ 0 ]; ?>"/>-->
-                                    <?php
                                     /**
                                      *  php thumb 
                                      */
+                                    $id = get_post_thumbnail_id();
+
+                                    $alt = get_the_title();
+
                                     $full = wp_get_attachment_metadata( $id, $unfiltered );
 
                                     $path = get_attached_file( $id );
@@ -75,12 +69,8 @@ function nz_bs_carousel( $wp_query ) {
                                     extract( $args );
                                     $image_src = $image->returnImage();
                                     ?>
-                                    <img src="<?php echo $image_src; ?>" height="100%"/>
-                                    <?php 
-/*                                    
-                                    <img src="<?php echo $image_src; ?>" height="100%"/>
- */
-                                    ?>
+                                    <img src="<?php echo $image_src; ?>"/>
+
 
 
 
@@ -88,10 +78,11 @@ function nz_bs_carousel( $wp_query ) {
                                           <?php the_title() ?>
 
                                           <?php
-                                          echo $image->getArg( 'width' );
-                                          echo '/';
-                                          echo $image->getArg( 'height' );
-                                          /* echo $query->current_post; */
+                                          /*
+                                            echo $image->getArg( 'width' );
+                                            echo '/';
+                                            echo $image->getArg( 'height' );
+                                           */
                                           ?>
                                     </span>
                               </a>
@@ -103,50 +94,51 @@ function nz_bs_carousel( $wp_query ) {
                         /* d( $image ); */
                         /* d( $image->getArg( 'width') ); */
                         /* d( $image->getArg( 'height') ); */
-                        /*d( $full );*/
+                        /* d( $full ); */
                         ?>
                   </div>
 
-            <?php $query->rewind_posts(); ?>
+                  <?php $query->rewind_posts(); ?>
 
                   <!-- Indicators -->
                   <ol class="carousel-indicators">
-            <?php
-            $first = true;
-            $count = 1;
-            while ( $query->have_posts() && $query->current_post < $miniatures ):
-                  $query->the_post();
-                  ?>
+                        <?php
+                        $first = true;
+                        $count = 1;
+                        while ( $query->have_posts() && $query->current_post < $miniatures ):
+                              $query->the_post();
+                              ?>
                               <li data-target="#nz_bs_carousel_<?php echo $nz_bs_carousel ?>" data-slide-to="<?php echo $count - 1 ?>" class="<?php echo ($first) ? "active" : null ?>">
 
-                  <?php
-                  $thumb = nz_get_thumb( get_post_thumbnail_id(), 185, 160 );
-                  $img_tag = nz_get_img_tag( $thumb[ 0 ], get_the_title() );
-                  echo $img_tag;
-                  ?>
+                                    <?php
+                                    $thumb = nz_get_thumb( get_post_thumbnail_id(), 185, 160 );
+                                    $img_tag = nz_get_img_tag( $thumb[ 0 ], get_the_title() );
+                                    echo $img_tag;
+                                    ?>
 
                               </li>
 
-                  <?php
-                  $count ++;
-                  $first = false;
-            endwhile;
-            ?>
+                              <?php
+                              $count ++;
+                              $first = false;
+                        endwhile;
+                        ?>
                   </ol>
 
 
 
+                  <?php
+                  /*
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#nz_bs_carousel_<?php echo $nz_bs_carousel ?>" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#nz_bs_carousel_<?php echo $nz_bs_carousel ?>" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
 
-                  <!-- Controls -->
-                  <!--                 
-                  <a class="left carousel-control" href="#nz_bs_carousel_<?php echo $nz_bs_carousel ?>" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                  </a>
-                  <a class="right carousel-control" href="#nz_bs_carousel_<?php echo $nz_bs_carousel ?>" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                  </a>
-                  -->
-
+                   */
+                  ?>
             </div>
             <?php
       endif;

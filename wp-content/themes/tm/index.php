@@ -1,21 +1,67 @@
-<!--<?php get_template_part( 'templates/page', 'header' ); ?>-->
 
-<?php if ( !have_posts() ) : ?>
-      <div class="alert alert-warning">
-            <?php _e( 'Sorry, no results were found.', 'roots' ); ?>
-      </div>
-      <?php get_search_form(); ?>
-<?php endif; ?>
+<?php
+//FRONT PAGE SLIDER
+if ( $wp_query->is_front_page() && !$wp_query->is_paged() ) {
+      ?>
+      <section class="row nz-slider" style="margin-top: 20px;">
+            <?php
+            echo do_shortcode( '[metaslider id=18]' ); //121, 49
+            ?>
+      </section>
+      <?php
+}
+?>
+<?php
+//archive slider
+if ( $wp_query->is_archive() && !$wp_query->is_paged() ) {
+      ?>
+            <!--<section class="row">-->
+      <section class="">
+            <!--<div class="col-xs-12">-->
+            <div class="">
+                  <?php
+                  nz_bs_carousel( $wp_query );
+                  $wp_query->current_post = 3;
+                  ?>
+            </div>
+      </section>
+      <?php
+}
+?>
 
-<section class="row" style="margin-top: 40px;">
-      <ul>
-            <?php while ( have_posts() ) : the_post(); ?>
-                  <?php get_template_part( 'templates/nz/archive/list-item-2' ); ?>
-            <?php endwhile; ?>
-      </ul>
+<!-- FRONT PAGE LOOP -->
+
+<section class="row">
+      <?php if ( have_posts() ): ?>
+
+            <?php
+            $tpl_loop = array(
+                  'container' => array(
+                        'tag' => 'ul',
+                        'id' => '',
+                        'class' => 'nz-posts-list-1 infinite-src'
+                  ),
+                  'item_container' => array(
+                        'tag' => 'li',
+                        'id' => '',
+                        'class' => 'col-xs-6 col-sm-6 col-md-4 col-lg-4'
+                  ),
+                  'item_template' => array(
+                        'template_part' => 'templates/nz/archive/nz-posts-list-1-item'
+                  )
+            );
+
+            echo nz_tpl_loop( $tpl_loop );
+            ?>
+
+
+      <?php endif; ?>
 </section>
 
+
+<!-- FRONT PAGE PAGER ??-->
 <?php if ( $wp_query->max_num_pages > 1 ) : ?>
+
       <nav class="post-nav">
             <ul class="pager">
                   <li class="previous"><?php next_posts_link( __( '&larr; Older posts', 'roots' ) ); ?></li>

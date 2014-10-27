@@ -88,7 +88,7 @@ if ( $DateTime ) {
 
 
 <div class="aside-item text-center">
-      <a href="<?php echo get_permalink( get_page_by_path( 'subir_evento' ) ); ?>">
+      <a href="<?php echo get_permalink( get_page_by_path( 'subir-evento' ) ); ?>">
             Subir Evento
       </a>
 </div>
