@@ -89,7 +89,7 @@
                   </div>
                   <div class="col-md-10">
                         <h2> Cristina </h2>
-                        <span class="text-italic"> Colaboradora / Fotógrafa </span>
+                        <span class="text-italic"> Fotógrafa </span>
                         <p>
                               <b> CRISTINA, Cazadora profesional con una puntería excepcional. </b> <br>
                               Diseñadora de interiores especializada en el diseño de espacios comerciales, hace más de tres años que empezó con su blog The StreetStyle Hunter y se podría decir que ha convertido su pasión por la observación en su profesión. Ahora se une al equipo de TrendsMag trayendo consigo toda su experiencia como fotógrafa de streetstyle.
