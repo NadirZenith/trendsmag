@@ -63,7 +63,7 @@ function nz_pre_get_archive_event( $query ) {
       )
             return;
 
-      return;
+      /*return;*/
       $date = get_query_var( 'date' );
 
       $DateTime = DateTime::createFromFormat( 'd-m-Y', $date );
@@ -74,7 +74,7 @@ function nz_pre_get_archive_event( $query ) {
             $start_date = strtotime( "now" );
       }
 
-      $end_date = strtotime( '+ 1 week', $start_date );
+      $end_date = strtotime( '+ 1 month', $start_date );
       /*
         d( $start_date );
         d( $end_date );

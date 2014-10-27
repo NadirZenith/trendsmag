@@ -4,7 +4,7 @@ $begin_date->setTimestamp( get_post_meta( get_the_ID(), 'event_begin_date', true
 ?>
 <time class="published text-left" datetime="<?php echo $begin_date->format( 'l d/m/y H:i' ); ?>">
 
-      <span class="glyphicon glyphicon-time"></span>
+      <span class="fa fa-clock-o"></span>
 
       <?php
       //begin date
@@ -45,24 +45,24 @@ $begin_date->setTimestamp( get_post_meta( get_the_ID(), 'event_begin_date', true
 </div>
 -->
 <div class="row clearfix event-meta">
-      
+
       <div>
-            
+
       </div>
-      
-      
+
+
       <?php
       $class = 'col-lg-12 col-sm-12 col-xs-12 col-md-12';
       $wrapper = '<strong>%s</strong>';
-      nz_get_container_from_field($class, '<span>Price: </span>', 'event_price',$wrapper);
+      nz_get_container_from_field( $class, '<span>Price: </span>', 'event_price', $wrapper );
       ?>
 
       <?php
-      nz_get_container_from_field($class, '<span>Conditions: </span>', 'event_price_conditions',$wrapper);
+      nz_get_container_from_field( $class, '<span>Conditions: </span>', 'event_price_conditions', $wrapper );
       ?>
 
       <?php
-      nz_get_container_from_field($class, '<span>Place: </span>', 'event_place_name',$wrapper);
+      nz_get_container_from_field( $class, '<span>Place: </span>', 'event_place_name', $wrapper );
       ?>
 
 

@@ -81,8 +81,6 @@ if ( $DateTime ) {
             $("aside.sidebar").stick_in_parent({
                   offset_top: 70
             });
-            // call my method
-
       });
 </script>
 
