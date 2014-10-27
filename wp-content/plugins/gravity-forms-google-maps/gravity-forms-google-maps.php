@@ -147,7 +147,8 @@ function nz_gform_google_maps_script() {
       </style>
       <script>
                   jQuery(function($) {
-                        $form = $('#gform_5');
+                        $form = $('#gform_1');
+                        
                         $form.bind("keyup keypress", function(e) {
                               var code = e.keyCode || e.which;
                               if (code == 13) {
@@ -156,7 +157,7 @@ function nz_gform_google_maps_script() {
                               }
                         });
                         //get current address from hidden field
-                        $input = $('#input_5_9');
+                        $input = $('#input_1_11');
                         jsonAdress = $.parseJSON($input.val());
                         //if is not empty build LatLng
                         //else default to bcn
