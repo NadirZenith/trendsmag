@@ -12,7 +12,7 @@
       ?>
       <article <?php post_class(); ?>>
             <header>
-                  <h1 class="entry-title text-justify"><?php echo strtoupper( get_the_title() ); ?></h1>
+                  <h1 class="entry-title text-justify"><?php echo get_the_title() ; ?></h1>
             </header>
             <div class="thumbnail">
                   <?php echo nz_get_image_tag( 1000 ); ?>
