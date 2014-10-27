@@ -2,9 +2,12 @@
 
 function nz_get_asset( $type, $asset = null ) {
       if ( $asset ) {
-            /* return trailingslashit( get_site_url() ) . 'assets/' . trailingslashit( $type ) . $asset; */
-            return trailingslashit( get_site_url() ) . 'assets/' . trailingslashit( $type ) . $asset;
-            /*return trailingslashit( get_home_url() ) . 'assets/' . trailingslashit( $type ) . $asset;*/
+            if ( is_localhost() ) {
+
+                  return trailingslashit( get_site_url() ) . 'assets/' . trailingslashit( $type ) . $asset;
+            } else {
+                  return trailingslashit( get_home_url() ) . 'assets/' . trailingslashit( $type ) . $asset;
+            }
       }
       return FALSE;
 }
