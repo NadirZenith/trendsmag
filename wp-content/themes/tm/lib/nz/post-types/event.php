@@ -159,11 +159,11 @@ function event_change_date_format( $post_data, $form, $entry ) {
       return $post_data;
 }
 
-add_filter( "nz_gform_google_maps_after_submission_" . $nz[ 'form.event' ][ 'id' ] . '_9', "process_event_map", 10, 5 );
+add_filter( "nz_gform_google_maps_after_submission_" . $nz[ 'form.event' ][ 'id' ] . '_11', "process_event_map", 10, 5 );
 
 function process_event_map( $arg ) {
       $post_id = $arg[ 'entry' ][ 'post_id' ];
-      $Map = json_decode( $arg[ 'entry' ][ '9' ] );
+      $Map = json_decode( $arg[ 'entry' ][ '11' ] );
       $array_map = array(
             'address' => $Map->address,
             'lat' => $Map->lat,
