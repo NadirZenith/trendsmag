@@ -91,7 +91,7 @@
                         <h2> Cristina </h2>
                         <span class="text-italic"> Colaboradora / Fotógrafa </span>
                         <p>
-                              <b> FRAN, Nunca pasará de moda, porque siempre conoce la moda. </b> <br>
+                              <b> CRISTINA, Cazadora profesional con una puntería excepcional. </b> <br>
                               Diseñadora de interiores especializada en el diseño de espacios comerciales, hace más de tres años que empezó con su blog The StreetStyle Hunter y se podría decir que ha convertido su pasión por la observación en su profesión. Ahora se une al equipo de TrendsMag trayendo consigo toda su experiencia como fotógrafa de streetstyle.
 
                               Cristina adora la variedad de estilos, pero también la variedad de personalidades, y eso se nota mucho en sus fotografías, en las que captura ambas cosas de manera artística.
