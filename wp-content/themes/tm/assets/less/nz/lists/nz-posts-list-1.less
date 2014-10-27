@@ -6,10 +6,17 @@
             float: left;
             padding-left: 5px;
             padding-right: 5px;
+            
+            height: 325px;
+            margin-top: 10px;
+      }
+      
+      .thumb{
+            height: 100%;
+            /*height: 325px;*/
       }
 
-      article{
-            /*height: 304px;*/
+      article{ 
             position: relative;
             margin-bottom: 10px;
             overflow: hidden;
@@ -69,31 +76,18 @@
             z-index: 100;
             width:100%;
             overflow: hidden;
-            top: 84%;
+            bottom: -25px;
             height: 75px;
             transition: all 0.2s linear;
             background: #fff;
             background: rgba(255,255,255,0.5);
             border-top: 1px solid #aaa;
-
-            /*    
-            background: -moz-linear-gradient(top,  rgba(246,248,249,0.8) 0%, rgba(215,222,227,0.8) 2%, rgba(229,235,238,0.8) 7%, rgba(245,247,249,0.8) 100%);
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,248,249,0.8)), color-stop(2%,rgba(215,222,227,0.8)), color-stop(7%,rgba(229,235,238,0.8)), color-stop(100%,rgba(245,247,249,0.8)));
-            background: -webkit-linear-gradient(top,  rgba(246,248,249,0.8) 0%,rgba(215,222,227,0.8) 2%,rgba(229,235,238,0.8) 7%,rgba(245,247,249,0.8) 100%);
-            background: -o-linear-gradient(top,  rgba(246,248,249,0.8) 0%,rgba(215,222,227,0.8) 2%,rgba(229,235,238,0.8) 7%,rgba(245,247,249,0.8) 100%);
-            background: -ms-linear-gradient(top,  rgba(246,248,249,0.8) 0%,rgba(215,222,227,0.8) 2%,rgba(229,235,238,0.8) 7%,rgba(245,247,249,0.8) 100%);
-            background: linear-gradient(to bottom,  rgba(246,248,249,0.8) 0%,rgba(215,222,227,0.8) 2%,rgba(229,235,238,0.8) 7%,rgba(245,247,249,0.8) 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccf6f8f9', endColorstr='#ccf5f7f9',GradientType=0 );
-      
-            */
-
+            
+            /*background-color: red;*/
       }
       article:hover .slide-block{
-            /*top:70%;*/
-            top:75%;
+            bottom: -0px;
       }
-      /*
-      */
       .shadow-bottom{
             height: 15px;
             position: absolute;

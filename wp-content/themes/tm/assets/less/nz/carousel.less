@@ -1,7 +1,4 @@
 
-/* Extra small devices (phones, less than 768px) */
-/* No media query since this is the default in Bootstrap */
-
 .carousel-indicators{
       display: none;     
 }
@@ -9,7 +6,6 @@
 @media (min-width: @screen-sm-min) { 
       .carousel{
             overflow: hidden;
-            /*height: 330px;*/
             margin: 0 -10px;
       }
       //carousel 
@@ -18,20 +14,18 @@
             width: 66%;
             float: left;
             height: 320px;
-
-
       }
      
       .carousel-inner img{
-            margin-left: auto;
-            margin-right: auto;
             width: 100%;
       }
-
-
+      .carousel-inner a{
+            position: relative;
+      }
       .carousel-inner .carousel-caption{
-            top: 50%;
-
+            position: absolute;
+            top: 245px;
+            z-index: 200;
             font-size: @font-size-h3;
             background-color: rgba(255, 255, 255, 0.5);
             padding: 1px;

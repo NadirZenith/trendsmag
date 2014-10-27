@@ -1,24 +1,5 @@
 <?php
 
-/**
- *      Home Page Query
- */
-function nz_front_page_query( $query ) {
-
-      if ( !$query->is_main_query() || is_admin() )
-            return;
-
-      /* $query->set( 'lang', array('en', 'es')); */
-
-      if ( !$query->is_front_page() || !$query->is_home )
-            return;
-
-      /* $query->set( 'post_type', array( 'fashion', 'news', 'event', 'art', 'street-trend', 'music' ) ); */
-      $query->set( 'posts_per_page', 6 );
-}
-
-add_action( 'pre_get_posts', 'nz_front_page_query' );
-
 
 /**
  *      Add query vars

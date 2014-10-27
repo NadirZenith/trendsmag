@@ -69,3 +69,30 @@ if ( $wp_query->is_archive() && !$wp_query->is_paged() ) {
             </ul>
       </nav>
 <?php endif; ?>
+
+<script>
+      (function($) {
+
+            //nz-posts-list-1 js
+            $(document).on('click', '.slideup-trig', function(e) {
+
+                  e.preventDefault();
+                  var $btn = $(e.currentTarget);
+
+                  $box = $btn.next('.slideup-box');
+                  $box.css("bottom", "3px");
+
+
+            });
+
+
+            $(document).on('mouseleave', 'article', function(e) {
+                  var $article = $(e.currentTarget);
+
+                  var $box = $article.find('.slideup-box');
+
+                  $box.css('bottom', "-100%");
+            });
+
+      })(jQuery); // Fully reference jQuery after this point.
+</script>

@@ -1,23 +1,22 @@
 <footer >
-      <div class="nz-thetags">
+      <div class="nz-thetags" style="margin-top: 20px">
             <?php nz_the_tags( '<i class="fa fa-tags"></i>' ); ?>
       </div>
-      <div class="post-credits text-right">
-            <?php
-            if ( $post_credits = get_field( 'post_credits' ) ) {
-                  ?>
+      <?php
+      if ( $post_credits = get_field( 'post_credits' ) ) {
+            ?>
+            <div class="post-credits text-right">
                   <span class="text-italic">
 
                         <?php
                         echo $post_credits;
                         ?>
                   </span>
-                  <?php
-            }
-            ?>
-      </div>
+            </div>
+            <?php
+      }
+      ?>
       <div class="clearfix">
-            comments
             <?php nz_fb_comments(); ?>
       </div>
       <div class="clearfix">

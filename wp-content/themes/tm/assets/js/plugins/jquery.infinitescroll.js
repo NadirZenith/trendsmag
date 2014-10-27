@@ -68,7 +68,8 @@
             pathParse: undefined,
             dataType: 'html',
             appendCallback: true,
-            bufferPx: 50, //50
+            /*bufferPx: 50, //50*/
+            bufferPx: 450, //50
             pixelsFromNavToBottom: undefined, //70
             errorCallback: function() {
             },

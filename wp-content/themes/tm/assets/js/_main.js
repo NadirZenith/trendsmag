@@ -141,26 +141,6 @@
                               $('#infsc-target').append(list);
                         });
 
-                        //nz-posts-list-1 js
-                        $(document).on('click', '.slideup-trig', function(e) {
-
-                              e.preventDefault();
-                              var $btn = $(e.currentTarget);
-
-                              $box = $btn.next('.slideup-box');
-                              $box.css("bottom", "3px");
-
-
-                        });
-
-
-                        $(document).on('mouseleave', 'article', function(e) {
-                              var $article = $(e.currentTarget);
-
-                              var $box = $article.find('.slideup-box');
-
-                              $box.css('bottom', "-100%");
-                        });
 
                   }
             },
