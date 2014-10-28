@@ -29,5 +29,5 @@ if ( $post_type == 'event' ) {
             ?>
 
       </div>
-
+      <div class="clearfix"></div>
 </section>
