@@ -1,5 +1,4 @@
 <footer class="content-info" role="contentinfo" >
-      <div class="" style="padding-bottom: 50px;">
             <?php
             if ( has_nav_menu( 'footer_navigation' ) ) :
                   wp_nav_menu(
@@ -12,7 +11,6 @@
             endif;
             /*dynamic_sidebar( 'sidebar-footer' );*/
             ?>
-      </div>
 </footer>
 
 
