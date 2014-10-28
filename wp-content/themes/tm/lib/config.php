@@ -62,6 +62,7 @@ function roots_display_sidebar() {
             /* 'is_archive', */
             'is_category',
             'is_page',
+            'is_author',
             array( 'is_post_type_archive', array( 'post', 'top-place' ) )//event show
                 ),
                 /**
