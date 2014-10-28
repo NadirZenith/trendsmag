@@ -1,20 +1,34 @@
 .content-info { }
 
-
 //footer menu
-#main-menu-footer {
-      margin-top: 15px;
-      border-top: 1px solid #333;
-      width: 100%;
+/* Extra small devices (phones, less than 768px) */
+/*
+.content-info{
+margin-bottom: 35px;
 }
-#main-menu-footer li{
-      width: 20%;
-      text-align: center;
+*/
+
+#main-menu-footer {
+      width: 100%;
+      border-top: 1px solid #333;
 }
 #main-menu-footer a {
       padding-top: 5px;
       padding-bottom: 5px;
 }
-.content-info{
-      margin-bottom: 35px;
+#main-menu-footer li{
+      text-align: center;
+      width: 100%;
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { 
+
+      #main-menu-footer {
+            margin-top: 15px;
+            /*border-top: 1px solid #333;*/
+
+      }
+      #main-menu-footer li{
+            width: 20%;
+      }
 }

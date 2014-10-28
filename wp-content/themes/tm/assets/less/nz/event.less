@@ -56,7 +56,7 @@ ul.event-list li{ //item
                   position: relative;
                   margin-bottom: 10px;
 }
- 
+
 ul.event-list h2.entry-title{//item title
                              border-bottom: 1px solid black;
                              font-size: @font-size-h3;
@@ -92,10 +92,17 @@ ul.event-list .thumb-detail .glyphicon{      //item description
 
 /*  ---- CALENDAR ----*/
 #calendar{
-      width: 80%;
+      width: 100%;
+      /*font-size: 15px;*/
       font-size: 15px;
       margin: 0 auto;
 }
+@media (min-width: @screen-sm-min) { 
+      #calendar{
+            font-size: 12px;
+      }
+}
+
 #calendar.fc{
       border: 1px solid black;
       border-radius: 5px;
