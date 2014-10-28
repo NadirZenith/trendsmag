@@ -1,19 +1,24 @@
+<style>
+      .site-logo {
+      }
+      .site-logo img{
+            width: 95%;
+      }
+</style>
 <header  role="banner">
-      <div class="container site-logo">
-            <div class="row">
-                  <div class="col-xs-12 col-md-8 col-sm-8">
-
-                        <h1>
+      <div class="container site-logo2 banner">
+            <div class="row hidden-xs">
+                  <div class="col-xs-10 col-md-5 col-sm-7">
+                        <h1 class="site-logo text-hide">
                               <a href="<?php echo get_home_url() ?>" title="TrendsMag">
-                                    <img width="420" src="<?php echo nz_get_image_asset( 'logo/white-site-rc1.png' ) ?>" />
-
+                                    <img src="<?php echo nz_get_image_asset( 'logo/white-site-rc1.png' ) ?>" /> TrendsMag
                               </a>
                         </h1>
                   </div>
-                  <div class="col-xs-12 col-md-4 col-sm-4">
-                        <div class="pull-right" style="margin-top: 60px;">
+                  <div class="col-xs-12 pull-right col-md-4 col-sm-4">
+                        <div id="top-social-zone" class="pull-right" >
                               <?php nz_fb_like_iframe( 'https://www.facebook.com/trendsmag.net' ); ?>
-                              <?php get_template_part( 'templates/nz/social/social-icons-top-2' ); ?>
+                              <?php get_template_part( 'templates/nz/social/social-icons-top' ); ?>
                         </div>
                   </div>
             </div>
@@ -28,7 +33,16 @@
                               <span class="icon-bar"></span>
                               <span class="icon-bar"></span>
                         </button>
-                        <!--<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>-->
+                        <div id="mobile-site-logo" class="hidden-sm hidden-md hidden-lg text-hide">
+                               <a href="<?php echo get_home_url() ?>" title="TrendsMag">
+                                     <img width="200" src="<?php echo nz_get_image_asset( 'logo/white-site-rc1.png' ) ?>" /> TrendsMag
+                              </a>
+                        </div>
+                        <?php
+                        /*
+                          <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+                         */
+                        ?>
                   </div>
                   <nav class="collapse navbar-collapse" role="navigation">
                         <?php

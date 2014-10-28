@@ -1,29 +1,17 @@
-
-<div id="social-icons-top">
-      <ul>
-            <li>
-                  <a href="https://www.facebook.com/trendsmag.net" >
-                        <span class="social-facebook"></span>
-                  </a>
-            </li>
-            <li>
-                  <a href="https://twitter.com/TrendsMagBCN" >
-                        <span class="social-twitter"></span>
-                  </a>
-            </li>
-            <?php
-            /*
-              <li>
-              <a href="#link" >
-              <span class="social-youtube"></span>
-              </a>
-              </li>
-             */
-            ?>
-            <li>
-                  <a href="https://pinterest.com/TrendsMag" >
-                        <span class="social-pinterest"></span>
-                  </a>
-            </li>
-      </ul>
-</div>
+<ul id="social-icons-top">
+      <li>
+            <a href="https://www.facebook.com/trendsmag.net" target="_blank">
+                  <i class="fa fa-lg fa-facebook"></i>
+            </a>
+      </li>
+      <li>
+            <a href="https://twitter.com/TrendsMagBCN" target="_blank">
+                  <i class="fa fa-lg fa-twitter"></i>
+            </a>
+      </li>
+      <li>
+            <a href="http://instagram.com/trendsmagbcn" target="_blank">
+                  <i class="fa fa-lg fa-instagram "></i>
+            </a>
+      </li>
+</ul>
