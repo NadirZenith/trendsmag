@@ -14,6 +14,7 @@ if ( $post_type == 'event' ) {
 
 
 
+<div class="clearfix"></div>
 
 <section class="row " style="margin-top: 15px;">
       <div class="col-md-12">
@@ -29,5 +30,6 @@ if ( $post_type == 'event' ) {
             ?>
 
       </div>
-      <div class="clearfix"></div>
 </section>
+
+<div class="clearfix"></div>
