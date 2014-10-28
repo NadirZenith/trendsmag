@@ -447,16 +447,15 @@ function nz_related_content() {
             'container' => array(
                   'tag' => 'ul',
                   'id' => '',
-                  'class' => 'nz-posts-list-1 list-related'
+                  'class' => 'nz-posts-list-1'
             ),
             'item_container' => array(
                   'tag' => 'li',
                   'id' => '',
-                  'class' => 'col-md-4 col-sm-6 col-xs-12'
+                  'class' => 'col-md-6 col-sm-12 col-xs-12'
             ),
             'item_template' => array(
                   'template_part' => 'templates/nz/archive/nz-posts-list-1-item'
-            /* 'template_part' => 'templates/nz/archive/related-list-item' */
             )
       );
       $loop = new NzTplLoop( $tpl_loop );
