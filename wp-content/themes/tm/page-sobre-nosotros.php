@@ -51,6 +51,8 @@ $users = array(
 <ul id="staff">
       <?php
       foreach ( $users as $user => $data ) {
+            $User = get_user_by( 'slug', $user );
+            /*d( $users[ $user ][ 'info' ] );*/
             ?>
             <li class="row">
                   <article>
@@ -59,16 +61,13 @@ $users = array(
                         </div>
                         <div class="col-md-10">
                               <?php
-                              $user = get_user_by( 'slug', $user );
                               ?>
                               <h2>
                                     <a href="<?php echo get_author_posts_url( $user->ID ) ?>"><?php echo $user->display_name ?></a>
                               </h2>
-                              <span class="text-italic"> Directora </span>
+                              <span class="text-italic"> <?php echo $users[ $user ][ 'cargo' ]; ?> </span>
                               <p>
-                                    <?php
-                                    echo $users[ $user ][ 'info' ]
-                                    ?>
+                                    <?php echo $users[ $user ][ 'info' ]; ?>
                               </p>
                         </div>
                   </article>
