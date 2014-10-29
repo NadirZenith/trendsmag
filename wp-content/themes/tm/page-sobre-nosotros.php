@@ -28,7 +28,7 @@ $users = array(
                   Tras su paso por otras revistas online, Macarena aterriza en TrendsMag con el objetivo de fusionar su pasión por la investigación y el copywriting con su expertise como Project Manager y Relaciones Públicas.
                   La veréis a menudo porque no se pierde ni un evento, pero tranquilos que, aunque lo parezca, no sabe teletransportarse. Aún no.'
       ),
-      'Felipe Marx' => array(
+      'Felipe-Marx' => array(
             'img' => 'staff/felipe.jpg',
             'cargo' => 'Redactor y fotógrafo',
             'info' => ' 
@@ -54,11 +54,13 @@ $users = array(
       <?php
       foreach ( $users as $user => $data ) {
             $User = get_user_by( 'slug', $user );
+            d($User);
+            d($user);
             ?>
             <li class="row">
                   <article>
                         <div class="col-md-2">
-                              <img src="<?php echo nz_get_image_asset( $users[ $user ][ 'img' ] ) ?>" class="img-circle"/>
+                              <!--<img src="<?php echo nz_get_image_asset( $users[ $user ][ 'img' ] ) ?>" class="img-circle"/>-->
                         </div>
                         <div class="col-md-10">
                               <h2>
