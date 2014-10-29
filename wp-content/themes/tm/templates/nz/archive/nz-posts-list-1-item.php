@@ -46,6 +46,7 @@ $css = ($css) ? '' : 'active';
         </a>
         <div class="slideup-box">
         <div class="share-box">
+
         <a href="javascript:window.open(
         'https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode( get_permalink() ) ?>',
         '_blank',
@@ -68,11 +69,10 @@ $css = ($css) ? '' : 'active';
         <a href="#sharer" class="">
         <i class="fa fa-lg fa-pinterest"></i>
         </a>
+
+        </div>
         </div>
        */
-      ?>      
-
-</div>
-
+      ?>    
 </article>
 
