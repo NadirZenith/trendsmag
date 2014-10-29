@@ -39,40 +39,40 @@ $css = ($css) ? '' : 'active';
       </div>
 
       <div class="shadow-bottom"></div>
-      <a href="#" class="slideup-trig">
-            <i class="fa fa-lg fa-share-alt"></i> 
-      </a>
-      <div class="slideup-box">
-            <div class="share-box">
-                  <a href="javascript:window.open(
-                     'https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode( get_permalink() ) ?>',
-                     '_blank',
-                     'width=400,
-                     height=500');
-                     void(0);">
-                        <i class="fa fa-lg fa-facebook"></i>
-                  </a>
-                  <?php
-                  /*
-                    <a href="javascript:window.open(
-                    'http%3A%2F%2Fwww.facebook.com%2Fshare.php%3Fu%3Dhttp%3A%2F%2Fferalmotion.com%2Fshare%3Fwatch%3Dfd5f0c2',
-                    '_blank',
-                    'width=400,
-                    height=500');
-                    void(0);">
-                    FBshare
-                    </a>
-                    <a href="#sharer" class="">
-                    <i class="fa fa-lg fa-twitter"></i>
-                    </a>
-                    <a href="#sharer" class="">
-                    <i class="fa fa-lg fa-pinterest"></i>
-                    </a>
-                   */
-                  ?>      
-            </div>
+      <?php
+      /*
+        <a href="#" class="slideup-trig">
+        <i class="fa fa-lg fa-share-alt"></i>
+        </a>
+        <div class="slideup-box">
+        <div class="share-box">
+        <a href="javascript:window.open(
+        'https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode( get_permalink() ) ?>',
+        '_blank',
+        'width=400,
+        height=500');
+        void(0);">
+        <i class="fa fa-lg fa-facebook"></i>
+        </a>
+        <a href="javascript:window.open(
+        'http%3A%2F%2Fwww.facebook.com%2Fshare.php%3Fu%3Dhttp%3A%2F%2Fferalmotion.com%2Fshare%3Fwatch%3Dfd5f0c2',
+        '_blank',
+        'width=400,
+        height=500');
+        void(0);">
+        FBshare
+        </a>
+        <a href="#sharer" class="">
+        <i class="fa fa-lg fa-twitter"></i>
+        </a>
+        <a href="#sharer" class="">
+        <i class="fa fa-lg fa-pinterest"></i>
+        </a>
+        </div>
+       */
+      ?>      
 
-      </div>
+</div>
 
 </article>
 
