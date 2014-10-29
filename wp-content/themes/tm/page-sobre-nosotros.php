@@ -65,7 +65,7 @@ $users = array(
                               <?php
                               ?>
                               <h2>
-                                    <a href="<?php echo get_author_posts_url( $user->ID ) ?>"><?php echo $user->display_name ?></a>
+                                    <a href="<?php echo get_author_posts_url( $User->ID ) ?>"><?php echo $User->display_name ?></a>
                               </h2>
                               <span class="text-italic"> <?php echo $users[ $user ][ 'cargo' ]; ?> </span>
                               <p>
