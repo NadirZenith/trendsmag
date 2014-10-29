@@ -54,13 +54,11 @@ $users = array(
       <?php
       foreach ( $users as $user => $data ) {
             $User = get_user_by( 'slug', $user );
-            d($User);
-            d($user);
             ?>
             <li class="row">
                   <article>
                         <div class="col-md-2">
-                              <!--<img src="<?php echo nz_get_image_asset( $users[ $user ][ 'img' ] ) ?>" class="img-circle"/>-->
+                              <img src="<?php echo nz_get_image_asset( $users[ $user ][ 'img' ] ) ?>" class="img-circle"/>
                         </div>
                         <div class="col-md-10">
                               <h2>
@@ -80,5 +78,4 @@ $users = array(
             <?php
       }
       ?>
-
 </ul>
