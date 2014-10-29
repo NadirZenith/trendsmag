@@ -44,6 +44,7 @@ if ( FACEBOOK_APP_ID ) {
  *    see https://developers.facebook.com/docs/plugins/like-button/
  */
 function nz_fb_like_iframe( $url = null ) {
+      $url = ($url) ? $url : get_permalink();
       if ( FACEBOOK_APP_ID && $url ) {
             $url = urlencode( $url );
             ?>
@@ -54,11 +55,40 @@ function nz_fb_like_iframe( $url = null ) {
       }
 }
 
-function nz_fb_like( $url = null ) {
+function nz_fb_like( $url = null, $atts = array() ) {
       $url = ($url) ? $url : get_permalink();
+      $atts = array_merge(
+                array(
+                  //standard, button_count, button, box_count
+            'layout' => 'button_count',
+            'action' => 'like', //recommend
+            'show-faces' => 'true',
+            'colorscheme' => 'light',
+            'share' => 'true',
+            'width' => null
+                ), $atts
+      );
       ?>
       <div class="nz-fblike">
-            <div class="fb-like" data-href="<?php echo $url ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+            <div class="fb-like" 
+                 data-href="<?php echo $url ?>" 
+                 <?php if ( $atts[ 'layout' ] ): ?>
+                       data-layout="<?php echo $atts[ 'layout' ] ?>"
+                 <?php endif; ?>
+                 <?php if ( $atts[ 'like' ] ): ?>
+                       data-like="<?php echo $atts[ 'like' ] ?>"
+                 <?php endif; ?>
+                 <?php if ( $atts[ 'show-faces' ] ): ?>
+                       data-show-faces="<?php echo $atts[ 'show-faces' ] ?>"
+                 <?php endif; ?>
+                 <?php if ( $atts[ 'share' ] ): ?>
+                       data-share="<?php echo $atts[ 'share' ] ?>"
+                 <?php endif; ?>
+                 <?php if ( $atts[ 'width' ] ): ?>
+                       data-width="<?php echo $atts[ 'width' ] ?>"
+                 <?php endif; ?>
+                 >
+            </div>
       </div>
       <?php
 }
