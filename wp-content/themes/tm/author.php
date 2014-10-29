@@ -1,5 +1,23 @@
 
 <section class="row">
+      <div class="col-xs-12">
+            <h1 class="h4">
+                  <?php $curauth = (isset( $_GET[ 'author_name' ] )) ? get_user_by( 'slug', $author_name ) : get_userdata( intval( $author ) ); ?>
+                  <?php
+                  if ( $curauth ) {
+                        ?>
+                        Articulos de <a href="<?php echo get_permalink( get_page_by_path( 'sobre-nosotros' ) ) ?>">
+                              <b>
+                                    <?php
+                                    echo $curauth->get( 'display_name' );
+                                    ?>
+                              </b>
+                        </a>
+                        <?php
+                  }
+                  ?>
+            </h1>
+      </div>
       <?php if ( have_posts() ): ?>
 
             <?php
