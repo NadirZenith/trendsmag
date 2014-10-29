@@ -41,14 +41,16 @@
                         /*console.log(nav.outerHeight());*/
                         var pos = nav.offset().top;
 
-                        $(window).scroll(function() {
+                        $(document).scroll(function() {
                               /*console.log(pos);*/
                               /*console.log($(this).scrollTop());*/
 
+                              $body = $('body');
                               if ($(this).scrollTop() > pos) {//fix navbar top
                                     nav.addClass("navbar-fixed-top");//navbar-fixed
                                     var paddingTop = nav.outerHeight(true) + 'px';
-                                    $('body').addClass("navbar-fixed-fix").css({
+                                    $body.addClass("navbar-fixed-fix");
+                                    $body.css({
                                           paddingTop: paddingTop
                                     });
 
@@ -71,7 +73,7 @@
                               } else {
                                     nav.removeClass("navbar-fixed-top");//navbar-default
 
-                                    $('body').removeClass("navbar-fixed-fix").css({
+                                    $body.removeClass("navbar-fixed-fix").css({
                                           paddingTop: '0'
                                     });
 
@@ -136,7 +138,7 @@
                               appendCallback: false,
                               errorCallback: function() {
                                     console.log('errorCallback');
-                              } 
+                              }
                         }, function(list) {
                               $('#infsc-target').append(list);
                         });
