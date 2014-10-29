@@ -13,7 +13,7 @@
       <article <?php post_class(); ?>>
             <header>
                   <h1 class="entry-title">
-                        <?php echo get_the_title() ; ?>
+                        <?php echo get_the_title(); ?>
                   </h1>
             </header>
             <div class="thumbnail">
@@ -29,13 +29,23 @@
                   <div class="pull-left">
                         <?php nz_tt_tweet(); ?>
                   </div>
+                  <div class="pull-left" style="margin-right: 15px;">
+                        <?php nz_fb_send(); ?>
+                  </div>
                   <div class="pull-left">
                         <?php nz_fb_like(); ?>
                   </div>
-                  <div class="pull-left">
-                        <?php nz_fb_send(); ?>
-                  </div>
+                  <?php
+                  /*
+                    <div class="pull-left">
+                    <?php nz_fb_like_iframe(); ?>
+                    </div>
+                   * 
+                   * 
+                   */
+                  ?>
             </div>
+
             <div class="entry-content text-justify">
                   <?php the_content(); ?>
             </div>
