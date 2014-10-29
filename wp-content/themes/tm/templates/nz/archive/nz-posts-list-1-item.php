@@ -47,8 +47,8 @@ $css = ($css) ? '' : 'active';
                   <a href="javascript:window.open(
                      'https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode( get_permalink() ) ?>',
                      '_blank',
-                     'width=500,
-                     height=300');
+                     'width=400,
+                     height=500');
                      void(0);">
                         <i class="fa fa-lg fa-facebook"></i>
                   </a>
