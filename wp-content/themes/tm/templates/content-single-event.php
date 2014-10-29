@@ -7,7 +7,7 @@
             </div>
             <div class="col-lg-6 ">
                   <header>
-                        <h1 class="entry-title text-justify"><?php echo get_the_title(); ?></h1>
+                        <h1 class="entry-title"><?php echo get_the_title(); ?></h1>
                   </header>
                   <?php get_template_part( 'templates/event-meta' ); ?>
 
@@ -16,11 +16,11 @@
                   </div>
 
             </div>
-             <div class="clearfix visible-xs-block2"></div>
+            <div class="clearfix "></div>
             <div>
                   <?php
                   nz_display_map( 'event_place_direction' );
-                  get_template_part( 'templates/entry-footer' );//next_prev , tags, related
+                  get_template_part( 'templates/entry-footer' ); //next_prev , tags, related
                   ?>
             </div >
 

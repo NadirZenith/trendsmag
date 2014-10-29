@@ -3,20 +3,53 @@
 .hentry .byline { }
 .hentry .entry-content { }
 .hentry footer { }
+//single
+.single h1.entry-title{
+      margin-top: 5px;
+      font-size: @font-size-h3;
 
-
-.nz-thetags{
-      padding-bottom: 15px;
 }
-.the-tags{
-      list-style: none;
-      padding: 0;
-      display: inline;
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { 
+      .single h1.entry-title{
+            font-size: @font-size-h1;
+
+      }
+
+}
+
+.single .entry-content{
+      font-family:  Tahoma, Geneva, sans-serif;
+}
+
+.nz-thetags{//wrapper
+            padding-bottom: 15px;
+}
+.the-tags{//ul
+          list-style: none;
+          padding: 0;
+          display: inline;
 }
 .the-tags li{ 
       display: inline;
-
+      margin-left: 5px;
 }
+
+//labels
+.label{
+      border: 1px solid #000;
+      /*font-size: 90%;*/
+}
+.label:hover{
+      background-color: #000;
+}
+.label:hover a{
+      color: #fff;
+}
+
+
+
 /*
 // ** posts
 .post-id {}

@@ -1,5 +1,4 @@
 <div class="row">
-
       <div class="col-xs-12 col-md-10">
             <?php while ( have_posts() ) : the_post(); ?>
                   <?php get_template_part( 'templates/page', 'header' ); ?>
@@ -32,7 +31,15 @@
                         <img src="<?php echo nz_get_image_asset( 'staff/fran.jpg' ) ?>" class="img-circle"/>
                   </div>
                   <div class="col-md-10">
-                        <h2>Fran</h2>
+                        <?php
+                        /* d( get_user_by( 'slug', 'francescaberni' ) ); */
+                        $user = get_user_by( 'slug', 'francescaberni' );
+                        /* d( $user->ID ); */
+                        /* d( get_author_posts_url( $user->ID )); */
+                        ?>
+                        <h2>
+                              <a href="<?php echo get_author_posts_url( $user->ID ) ?>">Fran</a>
+                        </h2>
                         <span class="text-italic"> Directora </span>
                         <p>
                               <b> FRAN, Nunca pasará de moda, porque siempre conoce la moda. </b> <br>

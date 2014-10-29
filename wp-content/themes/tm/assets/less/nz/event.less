@@ -1,7 +1,23 @@
 
+
+
+/* EVENT SINGLE*/
+
+.single .event .col-lg-6{
+      padding: 5px;
+}
+.single article.event{
+      position: relative;
+}
+.single .event-meta{
+      margin-top: 10px;
+      margin-bottom: 10px;
+}
+
+/* EVENT ARCHIVE */
 //date day title header
 .post-type-archive-event main h1{
-      font-size:      @font-size-h3;
+      font-size:      @font-size-h4;
       border-left: 1px solid black;
       border-bottom: 1px solid black;
       border-bottom-left-radius: 5px;
@@ -25,26 +41,6 @@
 .archive .event .col-md-6{
       padding: 0;
 }
-
-/* EVENT SINGLE*/
-/*
-.single .event .published{
-      margin-bottom: 20px;
-
-}
-*/
-.single .event .col-lg-6{
-      padding: 5px;
-}
-.single article.event{
-      position: relative;
-}
-.single .event-meta{
-      margin-top: 10px;
-      margin-bottom: 10px;
-}
-
-/* EVENT ARCHIVE */
 ul.event-list{
       padding: 0px;
 }
@@ -59,13 +55,23 @@ ul.event-list li{ //item
 
 ul.event-list h2.entry-title{//item title
                              border-bottom: 1px solid black;
-                             font-size: @font-size-h3;
+                             font-size: @font-size-h4;
                              text-indent: 5px;
                              text-overflow: ellipsis; 
                              white-space: nowrap;
                              overflow: hidden; 
                              margin: 0;
                              padding: 10px 0;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { 
+      .post-type-archive-event main h1,
+      ul.event-list h2.entry-title{
+            font-size: @font-size-h3;
+
+      }
+
 }
 ul.event-list .entry-summary p{//item summary
                                padding: 5px;
@@ -85,10 +91,7 @@ ul.event-list .thumb-detail{      //item description
 
 }
 
-//fix
-ul.event-list .thumb-detail .glyphicon{      //item description
-                                             top: 3px;
-}
+
 
 /*  ---- CALENDAR ----*/
 #calendar{
@@ -116,15 +119,8 @@ ul.event-list .thumb-detail .glyphicon{      //item description
 
 
 }
-/*      
-#calendar .fc-content{
-}
-*/
 #calendar .fc-header-center{
-      /*padding-right:  20px;*/
       padding-top: 5px;
-
-
 }
 #calendar .fc-header-title h2{
       font-size: 22px;
@@ -134,7 +130,6 @@ ul.event-list .thumb-detail .glyphicon{      //item description
       padding-top: 7px;
       padding-bottom: 7px;
       color: #333;
-      /*background-color: #d4d4d4;*/
 }
 #calendar .fc-today{
       background-color:#0583F1 !important;

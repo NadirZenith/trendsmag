@@ -1,13 +1,11 @@
 <article <?php post_class(); ?>>
-      <div class="col-md-12">
-            <header>
-                  <h2 class="entry-title text-uppercase">
-                        <a class="text-nowrap" href="<?php the_permalink(); ?>">
-                              <?php the_title() ?>
-                        </a>
-                  </h2>
-            </header>
-      </div>
+      <header>
+            <h2 class="entry-title">
+                  <a class="text-nowrap" href="<?php the_permalink(); ?>">
+                        <?php the_title() ?>
+                  </a>
+            </h2>
+      </header>
       <?php
       $begin_date = new DateTime();
       $begin_date->setTimestamp( get_post_meta( get_the_ID(), 'event_begin_date', true ) );

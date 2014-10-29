@@ -6,10 +6,12 @@
                   $event_date->setTimestamp( get_post_meta( get_the_ID(), 'event_begin_date', true ) );
                   $event_date->setTime( 0, 0, 0 );
                   if ( $event_date != $control_date ) {
-                        if ( !$first )
-                              echo '</ul>';
-                        echo '<h1 class="event-day ">';
-                        /* echo '<hr>'; */
+                        if ( !$first ) {
+                              echo '</ul> </div>';
+                              /* echo '</ul>'; */
+                        }
+                        echo '<div class="col-xs-12"> <h1 class="event-day">';
+                        /* echo '<h1 class="event-day">'; */
                         echo $event_date->format( 'l d/m/y' );
                         echo '</h1>';
                         echo '<ul class="event-list">';
