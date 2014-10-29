@@ -12,5 +12,5 @@ function nz_mail_redirect( $wp ) {
       wp_redirect( 'https://mail.zoho.com/portal/trendsmag' );
 }
 
-add_action( 'wp', 'nz_mail_redirect' );
+/*add_action( 'wp', 'nz_mail_redirect' );*/
 ?>
