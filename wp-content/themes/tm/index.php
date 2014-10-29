@@ -13,6 +13,7 @@ if ( $wp_query->is_front_page() && !$wp_query->is_paged() ) {
 ?>
 <?php
 //archive slider
+/*
 if ( $wp_query->is_archive() && !$wp_query->is_paged() ) {
       ?>
             <!--<section class="row">-->
@@ -27,6 +28,7 @@ if ( $wp_query->is_archive() && !$wp_query->is_paged() ) {
       </section>
       <?php
 }
+ */
 ?>
 
 <!-- FRONT PAGE LOOP -->
