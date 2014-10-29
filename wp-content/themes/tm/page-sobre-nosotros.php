@@ -47,16 +47,10 @@ $users = array(
 );
 ?>
 
-<style>
-     
-</style>
-
 <h1>STAFF</h1>
 <ul id="staff">
       <?php
       foreach ( $users as $user => $data ) {
-            d( $user );
-            d( $data );
             ?>
             <li class="row">
                   <article>
