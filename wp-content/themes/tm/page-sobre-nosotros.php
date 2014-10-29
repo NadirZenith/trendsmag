@@ -28,7 +28,7 @@ $users = array(
                   Tras su paso por otras revistas online, Macarena aterriza en TrendsMag con el objetivo de fusionar su pasión por la investigación y el copywriting con su expertise como Project Manager y Relaciones Públicas.
                   La veréis a menudo porque no se pierde ni un evento, pero tranquilos que, aunque lo parezca, no sabe teletransportarse. Aún no.'
       ),
-      'felipe' => array(
+      'Felipe Marx' => array(
             'img' => 'staff/felipe.jpg',
             'cargo' => 'Redactor y fotógrafo',
             'info' => ' 
@@ -37,7 +37,7 @@ $users = array(
                   Felipe tiene interés por la innovación en general, pero por encima de todo, Felipe tiene buen oído y buena vista, lo que le convierte en nuestro gurú de la música y en el fotógrafo oficial de TrendsMag.
                   Le apasiona la fotografía, la música, la antropología, la moda, el arte, la filosofía… El día que logre poner en común todas esas áreas, será el hombre más feliz del planeta.'
       ),
-      'cristina' => array(
+      'Cristina' => array(
             'img' => 'staff/cristina.jpg',
             'cargo' => 'Fotógrafa',
             'info' => ' 
@@ -54,7 +54,6 @@ $users = array(
       <?php
       foreach ( $users as $user => $data ) {
             $User = get_user_by( 'slug', $user );
-            /*d( $users[ $user ][ 'info' ] );*/
             ?>
             <li class="row">
                   <article>
@@ -62,19 +61,22 @@ $users = array(
                               <img src="<?php echo nz_get_image_asset( $users[ $user ][ 'img' ] ) ?>" class="img-circle"/>
                         </div>
                         <div class="col-md-10">
-                              <?php
-                              ?>
                               <h2>
-                                    <a href="<?php echo get_author_posts_url( $User->ID ) ?>"><?php echo $User->display_name ?></a>
+                                    <a href="<?php echo get_author_posts_url( $User->ID ) ?>">
+                                          <?php echo $User->display_name ?>
+                                    </a>
                               </h2>
-                              <span class="text-italic"> <?php echo $users[ $user ][ 'cargo' ]; ?> </span>
+                              <span class="text-italic"> 
+                                    <?php echo $users[ $user ][ 'cargo' ]; ?> 
+                              </span>
                               <p>
                                     <?php echo $users[ $user ][ 'info' ]; ?>
                               </p>
                         </div>
                   </article>
             </li>
-      <?php }
+            <?php
+      }
       ?>
 
 </ul>
