@@ -26,61 +26,33 @@
                         // JavaScript to be fired on all pages
                         //$('.post-nav').css('display', 'none');
 
-                        //dropdow on hover plugin
-                        /*                        
-                         $('.dropdown-toggle').dropdownHover();
-                         
-                         //make top links clicable
-                         $('nav > ul > li:has(ul) > a').on('click', function() {
-                         window.location.href = this.href;
-                         });
-                         * */
-
                         // ** fixed menu on scroll    
-                        var nav = $('.navbar');
                         /*console.log(nav.outerHeight());*/
+                        var nav = $('.navbar');
                         var pos = nav.offset().top;
 
-                        $(document).scroll(function() {
-                              /*console.log(pos);*/
-                              /*console.log($(this).scrollTop());*/
+                        var $body = $('body');
 
-                              $body = $('body');
-                              if ($(this).scrollTop() > pos) {//fix navbar top
-                                    nav.addClass("navbar-fixed-top");//navbar-fixed
+                        console.log(pos);
+                        $(document).scroll(function() {
+                              if ($(this).scrollTop() >= pos) {//fix navbar top
                                     var paddingTop = nav.outerHeight(true) + 'px';
+                                    console.log(paddingTop);
                                     $body.addClass("navbar-fixed-fix");
                                     $body.css({
                                           paddingTop: paddingTop
                                     });
+                                    nav.addClass("navbar-fixed-top");//navbar-fixed
 
-                                    /*                                    */
-                                    /*                                    
-                                     console.log('height(): ', nav.height());//only element height
-                                     console.log('innerHeight(): ', nav.innerHeight());//with padding
-                                     console.log('outerHeight(): ', nav.outerHeight());//with border
-                                     console.log('outerHeight(true): ', nav.outerHeight(true));//with margin
-                                     * */
-                                    /*                                    */
-
-                                    /*                                    
-                                     var paddingTop = pos + nav.height() + 'px';
-                                     console.log('paddingTop: ', paddingTop);
-                                     $('body').css({
-                                     paddingTop: paddingTop
-                                     });
-                                     * */
                               } else {
-                                    nav.removeClass("navbar-fixed-top");//navbar-default
-
                                     $body.removeClass("navbar-fixed-fix").css({
                                           paddingTop: '0'
                                     });
-
+                                    
+                                    nav.removeClass("navbar-fixed-top");//navbar-default
                               }
                         });
                         $(window).scroll();
-
 
                         // ** Performs a smooth page scroll to an anchor on the same page.                        
                         $('a[href*=#]:not([href=#])').click(function() {
