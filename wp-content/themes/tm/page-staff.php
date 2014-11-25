@@ -48,7 +48,7 @@
                   <div class="col-md-10">
                         <h2> Macarena </h2>
                         <span class="text-italic">
-                              Redactora / Relaciones publicas
+                              Editora / Relaciones publicas
                         </span>
                         <p>
                               <b>
