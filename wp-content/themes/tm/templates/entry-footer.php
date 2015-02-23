@@ -26,9 +26,3 @@
       </div>
 
 </footer>
-
-<?php return; ?>
-<?php
-/* echo nz_get_time_elapsed(); */
-/* &nbsp; */
-?>
