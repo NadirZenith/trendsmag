@@ -1,14 +1,6 @@
-<?php while ( have_posts() ) : the_post(); ?>
-
-      <?php
-      /* d(  pll_current_language()); */
+<?php
+while ( have_posts() ) : the_post();
       global $post;
-      /*
-        if ( $post_id = pll_get_post( $post->ID, pll_current_language() ) ) { // get translated post (in current language) if exists
-        $post = get_post( $post_id );
-        setup_postdata( $post );
-        }
-       */
       ?>
       <article <?php post_class(); ?>>
             <header>
@@ -26,24 +18,12 @@
             ?>
 
             <div class="clearfix" style="margin-top: 20px; margin-bottom: 20px; ">
-                  <div class="pull-left">
-                        <?php nz_tt_tweet(); ?>
+                  <div class="pull-left" >
+                        <?php echo nz_fb_like(); ?>
                   </div>
-                  <div class="pull-left" style="margin-right: 15px;">
-                        <?php nz_fb_send(); ?>
+                  <div class="pull-left" style="padding-left: 15px;">
+                        <?php get_template_part( 'templates/sharer' ); ?>
                   </div>
-                  <div class="pull-left">
-                        <?php nz_fb_like(); ?>
-                  </div>
-                  <?php
-                  /*
-                    <div class="pull-left">
-                    <?php nz_fb_like_iframe(); ?>
-                    </div>
-                   * 
-                   * 
-                   */
-                  ?>
             </div>
 
             <div class="entry-content text-justify">
