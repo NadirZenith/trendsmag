@@ -17,7 +17,7 @@
       }
       ?>
       <div class="clearfix">
-            <?php nz_fb_comments(); ?>
+            <?php echo nz_fb_comments(); ?>
       </div>
       <div class="clearfix">
             <?php
