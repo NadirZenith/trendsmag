@@ -30,7 +30,7 @@ function nz_facebook_sdk_output() {
                   fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
 
-      <?php if ( false ) { //has fb login test user status?>
+      <?php if ( false ) { //has fb login test user status ?>
                   window.onload = function() {
                         alert('load');
                         FB.getLoginStatus(function(response) {
@@ -204,9 +204,8 @@ function nz_fb_send( $url = null, $atts = array() ) {
       }
 }
 
-
 add_shortcode( "nz_fb_like_box", "nz_fb_like_box_shortcode" );
 
 function nz_fb_like_box_shortcode( $atts, $content = null ) {
-     $content . nz_fb_like_box( $atts[ 'url' ], $atts );
+      return $content . nz_fb_like_box( $atts[ 'url' ], $atts );
 }
