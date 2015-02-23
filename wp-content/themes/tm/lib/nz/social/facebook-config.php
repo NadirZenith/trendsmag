@@ -1,6 +1,6 @@
 <?php
 if ( WP_ENV === 'development' ) {
-      define( 'FACEBOOK_APP_ID', '720212671383794' ); // facebook app id development
+      define( 'FACEBOOK_APP_ID', '720182244720170' ); // facebook app id development
 } else {
       define( 'FACEBOOK_APP_ID', '720182244720170' ); // facebook app id 
 }
@@ -15,7 +15,7 @@ function nz_facebook_sdk_output() {
                         appId: '<?php echo FACEBOOK_APP_ID ?>',
                         xfbml: true,
                         /*version: 'v1.0'*/
-                        version: 'v2.0'
+                        version: 'v2.2'
                   });
 
             };
@@ -30,14 +30,31 @@ function nz_facebook_sdk_output() {
                   fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
 
+      <?php if ( false ) { //has fb login test user status?>
+                  window.onload = function() {
+                        alert('load');
+                        FB.getLoginStatus(function(response) {
+                              alert('response');
+                              NZ = (window.NZ) ? NZ : {};
+                              NZ.fb = (window.NZ.fb) ? NZ.fb : {};
+                              NZ.fb.status = response.status;
+                              console.log(response);
 
+                        });
+                  };
+
+
+
+      <?php } ?>
 
       </script> 
       <?php
 }
 
+/*
+ */
 if ( FACEBOOK_APP_ID ) {
-      add_action( 'get_header', 'nz_facebook_sdk_output', 10 );
+      add_action( 'base_after_body', 'nz_facebook_sdk_output', 10 );
 }
 
 /**
@@ -47,50 +64,37 @@ function nz_fb_like_iframe( $url = null ) {
       $url = ($url) ? $url : get_permalink();
       if ( FACEBOOK_APP_ID && $url ) {
             $url = urlencode( $url );
-            ?>
-            <div class="nz-fblike-iframe">
-                  <iframe src="//www.facebook.com/plugins/like.php?href=<?php echo $url ?>&amp;width=100&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=21&amp;appId=<?php FACEBOOK_APP_ID ?>" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
-            </div>
-            <?php
+            $content = '<div class="nz-fblike-iframe">'
+                      . '<iframe src="//www.facebook.com/plugins/like.php?href=' . $url . '&amp;width=100&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=21&amp;appId=' . FACEBOOK_APP_ID . '" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>'
+                      . '</div>';
+            /* $content = '<h1>asdf</h1>'; */
+            return $content;
       }
 }
 
-function nz_fb_like( $url = null, $atts = array() ) {
+function nz_fb_like( $url = null, $options = array() ) {
       $url = ($url) ? $url : get_permalink();
       $atts = array_merge(
                 array(
-                  //standard, button_count, button, box_count
+            //standard, button_count, button, box_count
             'layout' => 'button_count',
             'action' => 'like', //recommend
             'show-faces' => 'true',
             'colorscheme' => 'light',
-            'share' => 'true',
-            'width' => null
-                ), $atts
+            'share' => 'false',
+            'width' => 200
+                ), $options
       );
-      ?>
-      <div class="nz-fblike">
-            <div class="fb-like" 
-                 data-href="<?php echo $url ?>" 
-                 <?php if ( $atts[ 'layout' ] ): ?>
-                       data-layout="<?php echo $atts[ 'layout' ] ?>"
-                 <?php endif; ?>
-                 <?php if ( $atts[ 'like' ] ): ?>
-                       data-like="<?php echo $atts[ 'like' ] ?>"
-                 <?php endif; ?>
-                 <?php if ( $atts[ 'show-faces' ] ): ?>
-                       data-show-faces="<?php echo $atts[ 'show-faces' ] ?>"
-                 <?php endif; ?>
-                 <?php if ( $atts[ 'share' ] ): ?>
-                       data-share="<?php echo $atts[ 'share' ] ?>"
-                 <?php endif; ?>
-                 <?php if ( $atts[ 'width' ] ): ?>
-                       data-width="<?php echo $atts[ 'width' ] ?>"
-                 <?php endif; ?>
-                 >
-            </div>
-      </div>
-      <?php
+      $content = '<div class="nz-fblike">'
+                . '<div class="fb-like" data-href="' . $url . '" '
+                . 'data-layout="' . $atts[ 'layout' ] . '" '
+                . 'data-like="' . $atts[ 'like' ] . '" '
+                . 'data-show-faces="' . $atts[ 'show-faces' ] . '" '
+                . 'data-share="' . $atts[ 'share' ] . '" '
+                . 'data-width="' . $atts[ 'width' ] . '" >'
+                . '</div></div>';
+
+      return $content;
 }
 
 function nz_fb_like_box( $url = null, $atts = array() ) {
@@ -103,23 +107,26 @@ function nz_fb_like_box( $url = null, $atts = array() ) {
                   'show-faces' => 'true',
                   'header' => 'false',
                   'stream' => 'FALSE',
+                  'width' => '300', //min is 292 default is 300
+                  'height' => '300',
                   'show-border' => 'FALSE'
                       ), $atts
             );
             $atts[ 'colorscheme' ] = ( in_array( $atts[ 'colorscheme' ], array( 'light', 'dark' ) )) ? $atts[ 'colorscheme' ] : 'light';
-            ?>
-            <div class="nz-fblikebox">
-                  <div class="fb-like-box" 
-                       data-href="<?php echo $url ?>" 
-                       data-colorscheme="<?php echo $atts[ 'colorscheme' ] ?>" 
-                       data-show-faces="<?php echo $atts[ 'show-faces' ] ?>" 
-                       data-header="<?php echo $atts[ 'header' ] ?>" 
-                       data-stream="<?php echo $atts[ 'stream' ] ?>" 
-                       data-show-border="<?php echo $atts[ 'show-border' ] ?>">
-                  </div>
-            </div>
-            <?php
+            $content = '<div class="nz-fblikebox">'
+                      . '<div class="fb-like-box" '
+                      . 'data-href="' . $url . '" '
+                      . 'data-colorscheme="' . $atts[ 'colorscheme' ] . '" '
+                      . 'data-show-faces="' . $atts[ 'show-faces' ] . '" '
+                      . 'data-header="' . $atts[ 'header' ] . '" '
+                      . 'data-stream="' . $atts[ 'stream' ] . '" '
+                      . 'data-width="' . $atts[ 'width' ] . '" '
+                      . 'data-height="' . $atts[ 'height' ] . '" '
+                      . 'data-show-border="' . $atts[ 'show-border' ] . '">'
+                      . '</div></div>';
       }
+
+      return $content;
 }
 
 function nz_fb_sharer( $url = null, $atts = array() ) {
@@ -130,24 +137,18 @@ function nz_fb_sharer( $url = null, $atts = array() ) {
              */
             $atts = array_merge(
                       array(
-                  'layout' => 'box_count',
+                  'layout' => 'button_count',
                   'width' => null,
                       ), $atts
             );
-            ?>
-            <div class="nz-fbsharebutton">
-                  <div class="fb-share-button" 
-                       data-href="<?php echo $url ?>"
-                       <?php if ( $atts[ 'layout' ] ): ?>
-                             data-layout="<?php echo $atts[ 'layout' ] ?>"
-                       <?php endif; ?>
-                       <?php if ( $atts[ 'width' ] ): ?>
-                             data-width="<?php echo $atts[ 'width' ] ?>"
-                       <?php endif; ?>
-                       >
-                  </div>
-            </div>
-            <?php
+
+            $content = '<div class="nz-fbsharebutton">'
+                      . '<div class="fb-share-button" '
+                      . 'data-href="' . $url . '" '
+                      . 'data-layout="' . $atts[ 'layout' ] . '" '
+                      . 'data-width="' . $atts[ 'width' ] . '">'
+                      . '</div></div>';
+            return $content;
       }
 }
 
@@ -162,27 +163,20 @@ function nz_fb_comments( $url = null, $atts = array() ) {
                   'layout' => 'box_count',
                   'numposts' => 5,
                   'width' => '100%',
+                  /* 'colorscheme' => 'dark' */
                   'colorscheme' => 'light'
                       ), $atts
             );
-            ?>
 
-            <div class="nz-fbcomments">
-                  <div class="fb-comments"
-                       data-href="<?php echo $url ?>"
-                       <?php if ( $atts[ 'width' ] ): ?>
-                             data-width="<?php echo $atts[ 'width' ] ?>"
-                       <?php endif; ?>
-                       <?php if ( $atts[ 'numposts' ] ): ?>
-                             data-numposts="<?php echo $atts[ 'numposts' ] ?>"
-                       <?php endif; ?>
-                       <?php if ( $atts[ 'colorscheme' ] ): ?>
-                             data-colorscheme="<?php echo $atts[ 'colorscheme' ] ?>"
-                       <?php endif; ?>
-                       >
-                  </div>
-            </div>
-            <?php
+            $content = '<div class="nz-fbcomments">'
+                      . '<div class="fb-comments" '
+                      . 'data-href="' . $url . '" '
+                      . 'data-width="' . $atts[ 'width' ] . '" '
+                      . 'data-numposts="' . $atts[ 'numposts' ] . '" '
+                      . 'data-colorscheme="' . $atts[ 'colorscheme' ] . '">'
+                      . '</div></div>';
+
+            return $content;
       }
 }
 
@@ -191,33 +185,34 @@ function nz_fb_send( $url = null, $atts = array() ) {
       $url = ($url) ? $url : get_permalink();
       if ( FACEBOOK_APP_ID && $url ) {
 
-            /*
-             * box_count", "button_count", "button", "link", "icon_link", or "icon".
-             */
             $atts = array_merge(
                       array(
-                  'layout' => 'box_count',
                   'kid_directed_site' => 'true',
                   'width' => '100%',
                   'colorscheme' => 'light'
                       ), $atts
             );
-            ?>
-            <div class="nz-fbsend">
-                  <div class="fb-send" 
-                       data-href="<?php echo $url ?>"
-                       <?php if ( $atts[ 'colorscheme' ] ): ?>
-                             data-colorscheme="<?php echo $atts[ 'colorscheme' ] ?>"
-                       <?php endif; ?>
-                       <?php if ( $atts[ 'kid_directed_site' ] ): ?>
-                             data-kid_directed_site="<?php echo $atts[ 'kid_directed_site' ] ?>"
-                       <?php endif; ?>
 
+            $content = '<div class="nz-fbsend">'
+                      . '<div class="fb-send" '
+                      . 'data-href="' . $url . '" '
+                      . 'data-colorscheme="' . $atts[ 'colorscheme' ] . '" '
+                      . 'data-kid_directed_site="' . $atts[ 'kid_directed_site' ] . '" >'
+                      . '</div></div>';
 
-                       >
-
-                  </div>
-            </div>
-            <?php
+            return $content;
       }
+}
+
+add_shortcode( "nz_fb_like", "nz_fb_like_shortcode" );
+
+function nz_fb_like_shortcode( $atts, $content = null ) {
+
+      return $content . nz_fb_like( 'https://www.facebook.com/Clubber.Mag' );
+}
+
+add_shortcode( "nz_fb_like_box", "nz_fb_like_box_shortcode" );
+
+function nz_fb_like_box_shortcode( $atts, $content = null ) {
+     $content . nz_fb_like_box( $atts[ 'url' ], $atts );
 }
