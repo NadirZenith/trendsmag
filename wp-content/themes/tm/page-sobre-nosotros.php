@@ -49,15 +49,17 @@ $staff = array(
                   y siempre, absolutamente siempre, el resultado son artículos llenos de pasión. Si queréis hacerla feliz,
                   preguntadle por la moda de los 90. Sabe más que Kate Moss.'
       ),
-      'Cristina' => array(
+          /*
+            'Cristina' => array(
             'img' => 'staff/cristina.jpg',
             'cargo' => 'Fotógrafa',
-            'info' => ' 
-                  <b> CRISTINA, Cazadora profesional con una puntería excepcional. </b> <br>
-                  Diseñadora de interiores especializada en el diseño de espacios comerciales, hace más de tres años que empezó con su blog The StreetStyle Hunter y se podría decir que ha convertido su pasión por la observación en su profesión. Ahora se une al equipo de TrendsMag trayendo consigo toda su experiencia como fotógrafa de streetstyle.
-                  Cristina adora la variedad de estilos, pero también la variedad de personalidades, y eso se nota mucho en sus fotografías, en las que captura ambas cosas de manera artística.
-                  Siempre lleva su cámara encima, así que ¡cuidado!, cualquier día de estos te cruzas con ella y te dispara un buen par de fotos.'
-      )
+            'info' => '
+            <b> CRISTINA, Cazadora profesional con una puntería excepcional. </b> <br>
+            Diseñadora de interiores especializada en el diseño de espacios comerciales, hace más de tres años que empezó con su blog The StreetStyle Hunter y se podría decir que ha convertido su pasión por la observación en su profesión. Ahora se une al equipo de TrendsMag trayendo consigo toda su experiencia como fotógrafa de streetstyle.
+            Cristina adora la variedad de estilos, pero también la variedad de personalidades, y eso se nota mucho en sus fotografías, en las que captura ambas cosas de manera artística.
+            Siempre lleva su cámara encima, así que ¡cuidado!, cualquier día de estos te cruzas con ella y te dispara un buen par de fotos.'
+            )
+           */
 );
 ?>
 
@@ -65,6 +67,59 @@ $staff = array(
 <ul id="staff">
       <?php
       foreach ( $staff as $user => $data ) {
+            $User = get_user_by( 'slug', $user );
+            ?>
+            <li class="row">
+                  <article>
+                        <div class="col-md-2">
+                              <img src="<?php echo nz_get_image_asset( $staff[ $user ][ 'img' ] ) ?>" class="img-circle"/>
+                        </div>
+                        <div class="col-md-10">
+                              <h2>
+                                    <a href="<?php echo get_author_posts_url( $User->ID ) ?>">
+                                          <?php echo $User->display_name ?>
+                                    </a>
+                              </h2>
+                              <span class="text-italic"> 
+                                    <?php echo $staff[ $user ][ 'cargo' ]; ?> 
+                              </span>
+                              <p>
+                                    <?php echo $staff[ $user ][ 'info' ]; ?>
+                              </p>
+                        </div>
+                  </article>
+            </li>
+            <?php
+      }
+      ?>
+</ul>
+<?php
+$colaboradores = array(
+      'Denisse Garcia' => array(
+            'img' => 'staff/denisse.jpg',
+            'cargo' => 'Fotógrafa freelance',
+            'info' => '
+                  Su trabajo se define por su capacidad de explicar lo absurdo, 
+                  experimentando con tópicos pero siempre dotando a sus imágenes de un 
+                  toque aséptico y personal. Máster de Fotografía y Diseño en ELISAVA y 
+                  Graduada en Bellas Artes por la Universidad de Barcelona.'
+      ),
+      'Nuria Cienfuegos' => array(
+            'img' => 'staff/nuria.jpg',
+            'cargo' => 'Fotógrafa y creativa freelance',
+            'info' => '
+                  Le gusta entender la fotografía como un mundo multidisciplinar, siempre 
+                  construyendo imágenes entre la realidad y la ficción. Máster en Fotografía 
+                  y Diseño en ELISAVA y Licenciada en Publicidad y Relaciones Públicas por 
+                  la Universidad Autónoma de Barcelona. '
+      )
+);
+?>
+
+<h2>Colaboradores</h2>
+<ul id="staff">
+      <?php
+      foreach ( $colaboradores as $user => $data ) {
             $User = get_user_by( 'slug', $user );
             ?>
             <li class="row">
