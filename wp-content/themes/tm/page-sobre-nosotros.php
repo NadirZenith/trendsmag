@@ -9,7 +9,7 @@
 
 
 <?php
-$users = array(
+$staff = array(
       'francescaberni' => array(
             'img' => 'staff/fran.jpg',
             'cargo' => 'Directora',
@@ -20,8 +20,8 @@ $users = array(
                   Seguramente la veréis más de una vez investigando por el Raval en su querida bicicleta.'
       ),
       'macarena' => array(
-            'img' => 'staff/macarena.jpg',
-            'cargo' => 'Redactora y relaciones públicas',
+            'img' => 'staff/maca.jpg',
+            'cargo' => 'Editora y relaciones públicas',
             'info' => '
                   <b> MACARENA, Mujer de muchas palabras, habladas y escritas. </b> <br>
                   Procedente del mundo de las agencias de publicidad, completó su formación con un postgrado en Coolhunting que la llevó a reenfocar su carrera completamente, esta vez hacia el ámbito editorial y de las tendencias.
@@ -45,6 +45,18 @@ $users = array(
                   Diseñadora de interiores especializada en el diseño de espacios comerciales, hace más de tres años que empezó con su blog The StreetStyle Hunter y se podría decir que ha convertido su pasión por la observación en su profesión. Ahora se une al equipo de TrendsMag trayendo consigo toda su experiencia como fotógrafa de streetstyle.
                   Cristina adora la variedad de estilos, pero también la variedad de personalidades, y eso se nota mucho en sus fotografías, en las que captura ambas cosas de manera artística.
                   Siempre lleva su cámara encima, así que ¡cuidado!, cualquier día de estos te cruzas con ella y te dispara un buen par de fotos.'
+      ),
+      'InesTroytino' => array(
+            'img' => 'staff/ines.jpg',
+            'cargo' => 'Redactora',
+            'info' => ' 
+                  <b> INÉS, Amante de Hipérbole, Tilde y Sintaxis. </b> <br>
+                  Adicta al teclado, ha colaborado en numerosas revistas y eventos a lo largo
+                  de su carrera. A pesar de su formación en los campos del Marketing y del Community Manager,
+                  ella se considera una mujer autodidacta a la que le encanta aprender de todo. Seguramente por eso,
+                  Inés es nuestra redactora más multidisciplinar: se nutre de aquí y de allá, conoce de esto y de lo otro
+                  y siempre, absolutamente siempre, el resultado son artículos llenos de pasión. Si queréis hacerla feliz,
+                  preguntadle por la moda de los 90. Sabe más que Kate Moss.'
       )
 );
 ?>
@@ -52,13 +64,13 @@ $users = array(
 <h1>STAFF</h1>
 <ul id="staff">
       <?php
-      foreach ( $users as $user => $data ) {
+      foreach ( $staff as $user => $data ) {
             $User = get_user_by( 'slug', $user );
             ?>
             <li class="row">
                   <article>
                         <div class="col-md-2">
-                              <img src="<?php echo nz_get_image_asset( $users[ $user ][ 'img' ] ) ?>" class="img-circle"/>
+                              <img src="<?php echo nz_get_image_asset( $staff[ $user ][ 'img' ] ) ?>" class="img-circle"/>
                         </div>
                         <div class="col-md-10">
                               <h2>
@@ -67,10 +79,10 @@ $users = array(
                                     </a>
                               </h2>
                               <span class="text-italic"> 
-                                    <?php echo $users[ $user ][ 'cargo' ]; ?> 
+                                    <?php echo $staff[ $user ][ 'cargo' ]; ?> 
                               </span>
                               <p>
-                                    <?php echo $users[ $user ][ 'info' ]; ?>
+                                    <?php echo $staff[ $user ][ 'info' ]; ?>
                               </p>
                         </div>
                   </article>
