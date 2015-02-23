@@ -17,7 +17,7 @@
                   </div>
                   <div class="col-xs-12 pull-right col-md-4 col-sm-4">
                         <div id="top-social-zone" class="pull-right" >
-                              <?php nz_fb_like_iframe( 'https://www.facebook.com/trendsmag.net' ); ?>
+                              <?php echo nz_fb_like_iframe( 'https://www.facebook.com/trendsmag.net' ); ?>
                               <?php get_template_part( 'templates/nz/social/social-icons-top' ); ?>
                         </div>
                   </div>
@@ -62,28 +62,3 @@
 </header>
 
 
-
-<?php
-return;
-?>
-<ul class="nav navbar-nav nav-justified" id="menu-primary-navigation">
-      <li class="menu-fashion">
-            <a href="http://lab.dev/trendsmag/fashion">FASHION</a>
-      </li>
-      <li class="menu-noticias">
-            <a href="http://lab.dev/trendsmag/news">NOTICIAS</a>
-      </li>
-      <li class="dropdown menu-agenda"><a href="http://lab.dev/trendsmag/events" data-target="#" data-toggle="dropdown" class="dropdown-toggle">AGENDA <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-                  <li class="menu-subir-evento"><a href="http://lab.dev/trendsmag/subir-evento">Subir Evento</a></li>
-            </ul>
-      </li>
-      <li class="menu-search hidden-xs">
-            <a style="font-size:20px;" href="#" class="search glyphicon glyphicon-search"></a>
-            <div class="menu-search-form-wrapper">
-                  <form action="http://lab.dev/trendsmag/" class="" method="get" role="search">
-                        <input type="search" placeholder="Search" name="s" value="" class="search-field form-control">
-                  </form>
-            </div>
-      </li>
-</ul>
