@@ -94,8 +94,8 @@ $staff = array(
       ?>
 </ul>
 <?php
-$colaboradores = array(
-      'Denisse Garcia' => array(
+$contributors = array(
+      'Denisse-Garcia' => array(
             'img' => 'staff/denisse.jpg',
             'cargo' => 'Fotógrafa freelance',
             'info' => '
@@ -104,7 +104,7 @@ $colaboradores = array(
                   toque aséptico y personal. Máster de Fotografía y Diseño en ELISAVA y 
                   Graduada en Bellas Artes por la Universidad de Barcelona.'
       ),
-      'Nuria Cienfuegos' => array(
+      'nuria-cienfuegos' => array(
             'img' => 'staff/nuria.jpg',
             'cargo' => 'Fotógrafa y creativa freelance',
             'info' => '
@@ -119,13 +119,13 @@ $colaboradores = array(
 <h2>Colaboradores</h2>
 <ul id="staff">
       <?php
-      foreach ( $colaboradores as $user => $data ) {
+      foreach ( $contributors as $user => $data ) {
             $User = get_user_by( 'slug', $user );
             ?>
             <li class="row">
                   <article>
                         <div class="col-md-2">
-                              <img src="<?php echo nz_get_image_asset( $staff[ $user ][ 'img' ] ) ?>" class="img-circle"/>
+                              <img src="<?php echo nz_get_image_asset( $contributors[ $user ][ 'img' ] ) ?>" class="img-circle"/>
                         </div>
                         <div class="col-md-10">
                               <h2>
@@ -134,10 +134,10 @@ $colaboradores = array(
                                     </a>
                               </h2>
                               <span class="text-italic"> 
-                                    <?php echo $staff[ $user ][ 'cargo' ]; ?> 
+                                    <?php echo $contributors[ $user ][ 'cargo' ]; ?> 
                               </span>
                               <p>
-                                    <?php echo $staff[ $user ][ 'info' ]; ?>
+                                    <?php echo $contributors[ $user ][ 'info' ]; ?>
                               </p>
                         </div>
                   </article>
