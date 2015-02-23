@@ -1,4 +1,3 @@
-<!--<div class="clearfix2">-->
 <div class="text-right">
       <span class="byline author vcard" >
             <!--<?php echo __( 'By', 'roots' ); ?> -->
@@ -13,13 +12,3 @@
             <?php echo get_the_date( 'd/m/Y' ); ?>
       </time>
 </div>
-<!--</div>-->
-<?php
-/* echo nz_the_tags( 'in' ) */
-?>
-
-
-<?php return; ?>
-<!--
- by Felipe Marx 10/12/14
--->
