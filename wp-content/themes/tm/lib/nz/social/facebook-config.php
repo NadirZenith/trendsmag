@@ -204,12 +204,6 @@ function nz_fb_send( $url = null, $atts = array() ) {
       }
 }
 
-add_shortcode( "nz_fb_like", "nz_fb_like_shortcode" );
-
-function nz_fb_like_shortcode( $atts, $content = null ) {
-
-      return $content . nz_fb_like( 'https://www.facebook.com/Clubber.Mag' );
-}
 
 add_shortcode( "nz_fb_like_box", "nz_fb_like_box_shortcode" );
 
