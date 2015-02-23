@@ -10,7 +10,7 @@
             <![endif]-->
 
             <?php
-            do_action( 'get_header' );
+            do_action( 'base_after_body' );
             get_template_part( 'templates/base/header' );
             ?>
 
