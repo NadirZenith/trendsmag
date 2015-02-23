@@ -438,8 +438,8 @@ function nz_related_content() {
 
       $args = array(
             'post_type' => get_post_type(),
-            'posts_per_page' => 3,
-            'order' => 'ASC',
+            'posts_per_page' => 4,
+            'orderby' => 'rand',
       );
       $query = new WP_Query( $args );
       $tpl_loop = array(
