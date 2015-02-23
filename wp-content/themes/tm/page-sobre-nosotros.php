@@ -37,15 +37,6 @@ $staff = array(
                   Felipe tiene interés por la innovación en general, pero por encima de todo, Felipe tiene buen oído y buena vista, lo que le convierte en nuestro gurú de la música y en el fotógrafo oficial de TrendsMag.
                   Le apasiona la fotografía, la música, la antropología, la moda, el arte, la filosofía… El día que logre poner en común todas esas áreas, será el hombre más feliz del planeta.'
       ),
-      'Cristina' => array(
-            'img' => 'staff/cristina.jpg',
-            'cargo' => 'Fotógrafa',
-            'info' => ' 
-                  <b> CRISTINA, Cazadora profesional con una puntería excepcional. </b> <br>
-                  Diseñadora de interiores especializada en el diseño de espacios comerciales, hace más de tres años que empezó con su blog The StreetStyle Hunter y se podría decir que ha convertido su pasión por la observación en su profesión. Ahora se une al equipo de TrendsMag trayendo consigo toda su experiencia como fotógrafa de streetstyle.
-                  Cristina adora la variedad de estilos, pero también la variedad de personalidades, y eso se nota mucho en sus fotografías, en las que captura ambas cosas de manera artística.
-                  Siempre lleva su cámara encima, así que ¡cuidado!, cualquier día de estos te cruzas con ella y te dispara un buen par de fotos.'
-      ),
       'InesTroytino' => array(
             'img' => 'staff/ines.jpg',
             'cargo' => 'Redactora',
@@ -57,6 +48,15 @@ $staff = array(
                   Inés es nuestra redactora más multidisciplinar: se nutre de aquí y de allá, conoce de esto y de lo otro
                   y siempre, absolutamente siempre, el resultado son artículos llenos de pasión. Si queréis hacerla feliz,
                   preguntadle por la moda de los 90. Sabe más que Kate Moss.'
+      ),
+      'Cristina' => array(
+            'img' => 'staff/cristina.jpg',
+            'cargo' => 'Fotógrafa',
+            'info' => ' 
+                  <b> CRISTINA, Cazadora profesional con una puntería excepcional. </b> <br>
+                  Diseñadora de interiores especializada en el diseño de espacios comerciales, hace más de tres años que empezó con su blog The StreetStyle Hunter y se podría decir que ha convertido su pasión por la observación en su profesión. Ahora se une al equipo de TrendsMag trayendo consigo toda su experiencia como fotógrafa de streetstyle.
+                  Cristina adora la variedad de estilos, pero también la variedad de personalidades, y eso se nota mucho en sus fotografías, en las que captura ambas cosas de manera artística.
+                  Siempre lleva su cámara encima, así que ¡cuidado!, cualquier día de estos te cruzas con ella y te dispara un buen par de fotos.'
       )
 );
 ?>
