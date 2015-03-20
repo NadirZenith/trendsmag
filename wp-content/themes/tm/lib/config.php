@@ -15,7 +15,7 @@ add_theme_support( 'nz-bootstrap-gallery' );     // Enable NZ Bootstrap Gallery
 /**
  * Configuration values
  */
-define( 'GOOGLE_ANALYTICS_ID', '' ); // UA-XXXXX-Y (Note: Universal Analytics only, not Classic Analytics)
+define( 'GOOGLE_ANALYTICS_ID', 'UA-61027718-1' ); // UA-XXXXX-Y (Note: Universal Analytics only, not Classic Analytics)
 
 /**
  * .main classes
