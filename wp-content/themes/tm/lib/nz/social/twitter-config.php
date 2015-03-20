@@ -1,5 +1,5 @@
 <?php
-define( 'TWITTER_VIA', 'ClubberMag' ); // facebook app id 
+define( 'TWITTER_VIA', 'TrendsMag' ); // facebook app id 
 
 /**
  *    see https://about.twitter.com/resources/buttons#tweet
