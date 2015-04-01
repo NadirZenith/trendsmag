@@ -1,4 +1,4 @@
-<div class="text-right">
+<div class="entry-meta text-right">
       <span class="byline author vcard" >
             <!--<?php echo __( 'By', 'roots' ); ?> -->
             <i class="fa fa-user"></i>
