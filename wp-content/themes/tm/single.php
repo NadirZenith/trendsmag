@@ -1,6 +1,3 @@
-
-
-
 <?php
 $post_type = get_post_type();
 if ( $post_type == 'event' ) {
@@ -12,23 +9,19 @@ if ( $post_type == 'event' ) {
 }
 ?>
 
-
-
 <div class="clearfix"></div>
 
-<section class="row " style="margin-top: 15px;">
+<section class="row" style="margin-top: 15px;">
       <div class="col-md-12">
             <div class="list-heading">
-                  <h3 class="list-head ">
+                  <h3 class="list-head">
                         CONTENIDOS RELACIONADOS
                   </h3>
                   <div class="arrow"></div>
             </div>
-
             <?php
             nz_related_content();
             ?>
-
       </div>
 </section>
 
