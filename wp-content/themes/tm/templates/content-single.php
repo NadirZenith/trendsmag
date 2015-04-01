@@ -17,7 +17,7 @@ while ( have_posts() ) : the_post();
             get_template_part( 'templates/entry-meta' );
             ?>
 
-            <div class="clearfix" style="margin-top: 20px; margin-bottom: 20px; ">
+            <div class="clearfix" style="margin-top: 15px; margin-bottom: 15px;">
                   <div class="pull-left" >
                         <?php echo nz_fb_like(); ?>
                   </div>
