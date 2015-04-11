@@ -1,176 +1,185 @@
 <?php
 
-class NZ_Rewrite_Files {
+class NZ_Rewrite_Files
+{
 
-      public function __construct() {
-            $wp_upload_dir = wp_upload_dir();
+    public function __construct()
+    {
+        $wp_upload_dir = wp_upload_dir();
 
-            $this->upload_base = str_replace(home_url(), '', $wp_upload_dir['baseurl']);
-        
-            add_filter( 'nz_get_thumb', array( $this, 'nz_clean_files_urls' ) );
+        $this->upload_base = str_replace(home_url(), '', $wp_upload_dir['baseurl']);
 
-            if ( is_admin() ) {
-                  add_action( 'admin_init', array( $this, 'backend' ) );
-            }
-      }
+        add_filter('nz_get_thumb', array($this, 'nz_clean_files_urls'));
 
-      public function backend() {
+        if (is_admin()) {
+            add_action('admin_init', array($this, 'backend'));
+        }
+    }
 
-            global $wp_rewrite;
+    public function backend()
+    {
 
-            $roots_new_non_wp_rules = array(
-                'files/(.*)/(.*)/(.*)/(.*)\.(jpg|jpeg|png|gif)$' => $this->upload_base . '/cache/$1/$2/$3/$4.$5'
-            );
+        global $wp_rewrite;
 
-            $wp_rewrite->non_wp_rules = array_merge( $wp_rewrite->non_wp_rules, $roots_new_non_wp_rules );
-            return;
-      }
+        $roots_new_non_wp_rules = array(
+            'files/(.*)/(.*)/(.*)/(.*)\.(jpg|jpeg|png|gif)$' => $this->upload_base . '/cache/$1/$2/$3/$4.$5'
+        );
 
-      public function nz_clean_files_urls( $img_tag ) {
-            if ( strpos( $img_tag, 'wp-content/uploads/' ) > 0 ) {
-                  $img_tag = str_replace( 'web/wp-content/uploads/cache/', 'files/', $img_tag );
-            }
-            return $img_tag;
-      }
+        $wp_rewrite->non_wp_rules = array_merge($wp_rewrite->non_wp_rules, $roots_new_non_wp_rules);
+        return;
+    }
 
+    public function nz_clean_files_urls($img_tag)
+    {
+
+        if (strpos($img_tag, $this->upload_base) > 0) {
+            $img_tag = str_replace($this->upload_base . '/cache/', '/files/', $img_tag);
+        }
+        return $img_tag;
+    }
 }
 
 new NZ_Rewrite_Files();
+class NZRoutes
+{
+    public $post_types;
+    public $tags;
 
-class NZRoutes {
+    function __construct()
+    {
+        //post_types
+        $this->post_types = array('news', 'fashion', 'art', 'music', 'street-trend', 'event', 'place-top');
 
-      public $post_types;
-      public $tags;
+        add_action('post_type_link', array($this, 'post_type_link'), 1, 3);
+        add_action('post_type_archive_link', array($this, 'post_type_archive_link'), 1, 3);
 
-      function __construct() {
-            //post_types
-            $this->post_types = array( 'news', 'fashion', 'art', 'music', 'street-trend', 'event', 'place-top' );
+        //tags
+        $this->tags == array('post_tags');
 
-            add_action( 'post_type_link', array( $this, 'post_type_link' ), 1, 3 );
-            add_action( 'post_type_archive_link', array( $this, 'post_type_archive_link' ), 1, 3 );
+        //generate rewrite
+        if (is_admin())
+            add_action('generate_rewrite_rules', array($this, 'generate_rewrite_rules'));
+    }
 
-            //tags
-            $this->tags == array( 'post_tags' );
+    /**
+     *    Get post type single link (single)
+     * @param type $link
+     * @param type $post
+     * @return type
+     */
+    function post_type_link($link, $post = 0)
+    {
+        if (in_array($post->post_type, $this->post_types)) {
+            return home_url($post->post_type . '/' . $post->ID);
+        } else {
+            return $link;
+        }
+    }
 
-            //generate rewrite
-            if ( is_admin() )
-                  add_action( 'generate_rewrite_rules', array( $this, 'generate_rewrite_rules' ) );
-      }
+    /**
+     *    Get post type archive link
+     * @param type $link
+     * @param type $post_type
+     * @return type
+     */
+    function post_type_archive_link($link, $post_type)
+    {
+        if (in_array($post_type, $this->post_types)) {
+            return home_url($post_type);
+        } else {
+            return $link;
+        }
+    }
 
-      /**
-       *    Get post type single link (single)
-       * @param type $link
-       * @param type $post
-       * @return type
-       */
-      function post_type_link( $link, $post = 0 ) {
-            if ( in_array( $post->post_type, $this->post_types ) ) {
-                  return home_url( $post->post_type . '/' . $post->ID );
-            } else {
-                  return $link;
-            }
-      }
+    /**
+     *    Rewrite rules for post types
+     * @return string
+     */
+    function post_type_rewrite_rules()
+    {
+        $rules = array();
 
-      /**
-       *    Get post type archive link
-       * @param type $link
-       * @param type $post_type
-       * @return type
-       */
-      function post_type_archive_link( $link, $post_type ) {
-            if ( in_array( $post_type, $this->post_types ) ) {
-                  return home_url( $post_type );
-            } else {
-                  return $link;
-            }
-      }
+        $post_types_regex = '(' . join('|', $this->post_types) . ')';
+        /* foreach ( $this->post_types as $post_type ) { */
+        /* $regex = $post_type . '/?([0-9]+)?$'; */
+        /* $regex = $post_types_regex . '/?([0-9]+)?$'; */
+        $regex = $post_types_regex . '/?([0-9]+|page)?/?([^/]+)?$';
 
-      /**
-       *    Rewrite rules for post types
-       * @return string
-       */
-      function post_type_rewrite_rules() {
-            $rules = array();
+        /* $redirect = 'index.php?post_type=' . $post_type . '&p=$matches[1]'; */
+        /* $redirect = 'index.php?post_type=$matches[1]&p=$matches[2]'; */
+        $redirect = 'index.php?post_type=$matches[1]&p=$matches[2]&paged=$matches[3]';
 
-            $post_types_regex = '(' . join( '|', $this->post_types ) . ')';
-            /* foreach ( $this->post_types as $post_type ) { */
-            /* $regex = $post_type . '/?([0-9]+)?$'; */
-            /* $regex = $post_types_regex . '/?([0-9]+)?$'; */
-            $regex = $post_types_regex . '/?([0-9]+|page)?/?([^/]+)?$';
+        $rules[$regex] = $redirect;
+        /* } */
+        return $rules;
+    }
 
-            /* $redirect = 'index.php?post_type=' . $post_type . '&p=$matches[1]'; */
-            /* $redirect = 'index.php?post_type=$matches[1]&p=$matches[2]'; */
-            $redirect = 'index.php?post_type=$matches[1]&p=$matches[2]&paged=$matches[3]';
+    /**
+     *    Rewrite rules for post types
+     *    
+     * @return string
+     */
+    function post_tags_rewrite_rules()
+    {
+        $rules = array();
+        $post_types_regex = '(' . join('|', $this->post_types) . ')';
 
-            $rules[ $regex ] = $redirect;
-            /* } */
-            return $rules;
-      }
+        //'tag/([^/]+)/page/?([0-9]{1,})/?$'
+        //"index.php?tag=$matches[1]&paged=$matches[2]"
+        $regex = $post_types_regex . '/?tag/([^/]+)'; ///page?/([^/]+)?$';
 
-      /**
-       *    Rewrite rules for post types
-       *    
-       * @return string
-       */
-      function post_tags_rewrite_rules() {
-            $rules = array();
-            $post_types_regex = '(' . join( '|', $this->post_types ) . ')';
+        /* $redirect = 'index.php?post_type=$matches[1]&tag=$matches[2]&paged=$matches[3]'; */
+        $redirect = 'index.php?post_type=$matches[1]&tag=$matches[2]';
 
-            //'tag/([^/]+)/page/?([0-9]{1,})/?$'
-            //"index.php?tag=$matches[1]&paged=$matches[2]"
-            $regex = $post_types_regex . '/?tag/([^/]+)'; ///page?/([^/]+)?$';
+        $rules[$regex] = $redirect;
+        return $rules;
+    }
 
-            /* $redirect = 'index.php?post_type=$matches[1]&tag=$matches[2]&paged=$matches[3]'; */
-            $redirect = 'index.php?post_type=$matches[1]&tag=$matches[2]';
+    /**
+     *    Rules for pages ..
+     * @return string
+     */
+    function get_default_rules()
+    {
+        $rules = array();
 
-            $rules[ $regex ] = $redirect;
-            return $rules;
-      }
+        //PAGES
+        $rules['(.?.+?)(/[0-9]+)?/?$'] = 'index.php?pagename=$matches[1]&page=$matches[2]';
 
-      /**
-       *    Rules for pages ..
-       * @return string
-       */
-      function get_default_rules() {
-            $rules = array();
+        return $rules;
+    }
 
-            //PAGES
-            $rules[ '(.?.+?)(/[0-9]+)?/?$' ] = 'index.php?pagename=$matches[1]&page=$matches[2]';
+    function generate_rewrite_rules()
+    {
+        global $wp_rewrite;
 
-            return $rules;
-      }
-
-      function generate_rewrite_rules() {
-            global $wp_rewrite;
-
-            $rules = $rules = $this->post_tags_rewrite_rules() +
-                      $this->post_type_rewrite_rules() +
-                      $this->get_default_rules();
+        $rules = $rules = $this->post_tags_rewrite_rules() +
+            $this->post_type_rewrite_rules() +
+            $this->get_default_rules();
 
 
-            $wp_rewrite->rules = $rules;
-            /* df( $wp_rewrite ); */
-      }
-
+        $wp_rewrite->rules = $rules;
+        /* df( $wp_rewrite ); */
+    }
 }
 
 /* new NZRoutes(); */
 
-add_action( 'init', 'nz_add_tags_rules' );
+add_action('init', 'nz_add_tags_rules');
 
-function nz_add_tags_rules() {
-      $post_types = array( 'news', 'fashion', 'art', 'music', 'street-trend', 'top-place' );
-      $post_types_regex = '(' . join( '|', $post_types ) . ')';
+function nz_add_tags_rules()
+{
+    $post_types = array('news', 'fashion', 'art', 'music', 'street-trend', 'top-place');
+    $post_types_regex = '(' . join('|', $post_types) . ')';
 
-      //'tag/([^/]+)/page/?([0-9]{1,})/?$'
-      //"index.php?tag=$matches[1]&paged=$matches[2]"
-      $regex = $post_types_regex . '/?tag/([^/]+)'; ///page?/([^/]+)?$';
+    //'tag/([^/]+)/page/?([0-9]{1,})/?$'
+    //"index.php?tag=$matches[1]&paged=$matches[2]"
+    $regex = $post_types_regex . '/?tag/([^/]+)'; ///page?/([^/]+)?$';
 
-      /* $redirect = 'index.php?post_type=$matches[1]&tag=$matches[2]&paged=$matches[3]'; */
-      $redirect = 'index.php?post_type=$matches[1]&tag=$matches[2]';
+    /* $redirect = 'index.php?post_type=$matches[1]&tag=$matches[2]&paged=$matches[3]'; */
+    $redirect = 'index.php?post_type=$matches[1]&tag=$matches[2]';
 
 
-      add_rewrite_rule( $regex, $redirect, 'top' );
+    add_rewrite_rule($regex, $redirect, 'top');
 }
-
 ?>
