@@ -22,22 +22,18 @@
             // All pages
             common: {
                   init: function() {
-                        console.log('init');
                         // JavaScript to be fired on all pages
                         //$('.post-nav').css('display', 'none');
 
                         // ** fixed menu on scroll    
-                        /*console.log(nav.outerHeight());*/
                         var nav = $('.navbar');
                         var pos = nav.offset().top;
 
                         var $body = $('body');
 
-                        console.log(pos);
                         $(document).scroll(function() {
                               if ($(this).scrollTop() >= pos) {//fix navbar top
                                     var paddingTop = nav.outerHeight(true) + 'px';
-                                    console.log(paddingTop);
                                     $body.addClass("navbar-fixed-fix");
                                     $body.css({
                                           paddingTop: paddingTop
@@ -109,7 +105,7 @@
                               itemSelector: ".infinite-src li",
                               appendCallback: false,
                               errorCallback: function() {
-                                    console.log('errorCallback');
+                                    console.log('infinite scroll error');
                               }
                         }, function(list) {
                               $('#infsc-target').append(list);
@@ -121,7 +117,6 @@
             // Home page
             home: {
                   init: function() {
-                        console.log('home');
                   }
             },
             // subir-event page, note the change from subit-evento to subir_evento.

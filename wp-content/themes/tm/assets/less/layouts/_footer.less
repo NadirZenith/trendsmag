@@ -1,33 +1,49 @@
-.content-info { }
 
 #main-menu-footer {
-      width: 100%;
-      border-top: 1px solid #eee;
-      li{
-            text-align: center;
-            width: 100%;
-            a {
-                  padding-top: 2px;
-                  padding-bottom: 2px;
-            }
-      }
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    width: 100%;
+    border-top: 1px solid #eee;
+    background-color: rgba(255,255,255,0.8);
+    margin:0;
+    li{
+        text-align: center;
+        width: 100%;
+        a {
+            padding-top: 2px;
+            padding-bottom: 3px;
+        }
+    }
+}
+.nzMenuReplace{
+    cursor: pointer;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 100000;
+    font-size: 1.5em;
+    background-color: #fff;
+    padding: 0 4px;
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) { 
 
-      #main-menu-footer {
-            /*position: fixed;*/
-            /*bottom: 0;*/
 
-            z-index: 200;
-            background-color: rgba(255,255,255,0.8);
-            /*margin-top: 15px;*/
-            /*padding-bottom: 15px;*/
-            font-size: @font-size-h6;
-            li{
-                  width: 20%;
-            }
-      } 
+    #main-menu-footer.stick {
+        position: fixed;
+        bottom: 0;
+        z-index: 1000;
+    }
+
+    #main-menu-footer {
+        position: relative;
+        z-index: 200;
+        font-size: @font-size-h6;
+        li{
+            width: 20%;
+        }
+    } 
 
 
 }
