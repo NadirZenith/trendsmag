@@ -11,25 +11,6 @@ if ( $wp_query->is_front_page() && !$wp_query->is_paged() ) {
       <?php
 }
 ?>
-<?php
-//archive slider
-/*
-if ( $wp_query->is_archive() && !$wp_query->is_paged() ) {
-      ?>
-            <!--<section class="row">-->
-      <section class="">
-            <!--<div class="col-xs-12">-->
-            <div class="">
-                  <?php
-                  nz_bs_carousel( $wp_query );
-                  $wp_query->current_post = 3;
-                  ?>
-            </div>
-      </section>
-      <?php
-}
- */
-?>
 
 <!-- FRONT PAGE LOOP -->
 
@@ -60,8 +41,6 @@ if ( $wp_query->is_archive() && !$wp_query->is_paged() ) {
       <?php endif; ?>
 </section>
 
-
-<!-- FRONT PAGE PAGER ??-->
 <?php if ( $wp_query->max_num_pages > 1 ) : ?>
 
       <nav class="post-nav">
