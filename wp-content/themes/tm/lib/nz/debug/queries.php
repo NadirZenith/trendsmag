@@ -1,6 +1,6 @@
 <?php
 
-add_action( 'pre_get_posts', 'nz_facebook_page_tab' );
+/*add_action( 'pre_get_posts', 'nz_facebook_page_tab' );*/
 
 function nz_facebook_page_tab( $query ) {
 
