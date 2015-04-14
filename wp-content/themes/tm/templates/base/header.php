@@ -1,12 +1,5 @@
-<style>
-    .site-logo {
-    }
-    .site-logo img{
-        width: 95%;
-    }
-</style>
 <header  role="banner">
-    <div class="container site-logo2 banner">
+    <div class="container banner">
         <div class="row hidden-xs">
             <div class="col-xs-10 col-md-5 col-sm-7">
                 <h1 class="site-logo text-hide">
@@ -24,7 +17,7 @@
         </div>
     </div>
 
-    <div class="navbar navbar-default" >
+    <div id="top-navbar" class="navbar navbar-default" >
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
