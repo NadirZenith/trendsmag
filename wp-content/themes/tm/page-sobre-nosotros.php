@@ -19,17 +19,16 @@ $staff = array(
                   Fran es nuestra experta en moda, pero sus inquietudes la convierten, sin duda, en una inagotable fuente de conocimiento acerca de todo lo que puede catalogarse como “urbano”: arte, style, música, deporte…
                   Seguramente la veréis más de una vez investigando por el Raval en su querida bicicleta.'
       ),
-/*    
-      'macarena' => array(
-            'img' => 'staff/maca.jpg',
-            'cargo' => 'Editora y relaciones públicas',
+      'sabrina' => array(
+            'img' => 'staff/sabrina.jpg',
+            'cargo' => 'Gestora administrativa y de eventos',
             'info' => '
-                  <b> MACARENA, Mujer de muchas palabras, habladas y escritas. </b> <br>
-                  Procedente del mundo de las agencias de publicidad, completó su formación con un postgrado en Coolhunting que la llevó a reenfocar su carrera completamente, esta vez hacia el ámbito editorial y de las tendencias.
-                  Tras su paso por otras revistas online, Macarena aterriza en TrendsMag con el objetivo de fusionar su pasión por la investigación y el copywriting con su expertise como Project Manager y Relaciones Públicas.
-                  La veréis a menudo porque no se pierde ni un evento, pero tranquilos que, aunque lo parezca, no sabe teletransportarse. Aún no.'
+                  <b> SAB pestañas atentas, flequillo certero y pies elevados. </b> <br>
+                  Curiosidad, agilidad informativa, expresión verbal y gestión continua.
+                  Luego de colaborar con otras revistas online, coordinar la carrera de diseño textil y de moda en Buenos Aires y trabajar como estilista y realizadora de eventos de moda, ingresa a TrendsMag para hablarnos de moda y música, sus dos pasiones.
+                  Sab es Diseñadora Textil y de Moda especializada en comunicación y marketing de moda, además master en Fashion & Visual Merchandising en IED.
+                  Sueña con que algún día tendrá una cámara adherida al marco de sus gafas.'
       ),
- */
       'Felipe-Marx' => array(
             'img' => 'staff/felipe.jpg',
             'cargo' => 'Redactor y fotógrafo',
