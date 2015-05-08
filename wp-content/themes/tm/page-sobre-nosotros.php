@@ -21,12 +21,12 @@ $staff = array(
       ),
       'sabrina' => array(
             'img' => 'staff/sabrina.jpg',
-            'cargo' => 'Gestora administrativa y de eventos',
+            'cargo' => 'Gestión administrativa y de eventos',
             'info' => '
                   <b> SAB pestañas atentas, flequillo certero y pies elevados. </b> <br>
                   Curiosidad, agilidad informativa, expresión verbal y gestión continua.
-                  Luego de colaborar con otras revistas online, coordinar la carrera de diseño textil y de moda en Buenos Aires y trabajar como estilista y realizadora de eventos de moda, ingresa a TrendsMag para hablarnos de moda y música, sus dos pasiones.
-                  Sab es Diseñadora Textil y de Moda especializada en comunicación y marketing de moda, además master en Fashion & Visual Merchandising en IED.
+                  Luego de colaborar con otras revistas online, coordinar la carrera de diseño de moda en Buenos Aires, trabajar como estilista y realizadora de eventos de moda, ingresa a TrendsMag para hablarnos de moda y música, sus dos pasiones.
+                  Sab es diseñadora de Moda especializada en comunicación y marketing, además master en Fashion & Visual Merchandising.
                   Sueña con que algún día tendrá una cámara adherida al marco de sus gafas.'
       ),
       'Felipe-Marx' => array(
