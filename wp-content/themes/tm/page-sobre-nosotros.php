@@ -19,6 +19,7 @@ $staff = array(
                   Fran es nuestra experta en moda, pero sus inquietudes la convierten, sin duda, en una inagotable fuente de conocimiento acerca de todo lo que puede catalogarse como “urbano”: arte, style, música, deporte…
                   Seguramente la veréis más de una vez investigando por el Raval en su querida bicicleta.'
       ),
+/*    
       'macarena' => array(
             'img' => 'staff/maca.jpg',
             'cargo' => 'Editora y relaciones públicas',
@@ -28,6 +29,7 @@ $staff = array(
                   Tras su paso por otras revistas online, Macarena aterriza en TrendsMag con el objetivo de fusionar su pasión por la investigación y el copywriting con su expertise como Project Manager y Relaciones Públicas.
                   La veréis a menudo porque no se pierde ni un evento, pero tranquilos que, aunque lo parezca, no sabe teletransportarse. Aún no.'
       ),
+ */
       'Felipe-Marx' => array(
             'img' => 'staff/felipe.jpg',
             'cargo' => 'Redactor y fotógrafo',
