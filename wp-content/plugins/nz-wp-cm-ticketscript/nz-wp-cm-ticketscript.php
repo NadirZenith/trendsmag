@@ -128,11 +128,10 @@ class NzWpCmTicketscript
           onload="resizeIframe(this);"
           width="480"
           height="500"
-
          */
     }
 }
 
 new NzWpCmTicketscript(
-    array('agenda')
+    array('event')
 );
