@@ -26,10 +26,10 @@
 class NzWpCmTicketscript
 {
 
-    function __construct($post_types)
+    function __construct($post_types, $shop_id)
     {
         $this->_load_dependencies();
-        new NzWpCmTicketscriptMetaBox($post_types);
+        new NzWpCmTicketscriptMetaBox($post_types, $shop_id);
     }
 
     private function _load_dependencies()
@@ -133,5 +133,5 @@ class NzWpCmTicketscript
 }
 
 new NzWpCmTicketscript(
-    array('event')
+    array('event'), 'NDL5738Z'
 );

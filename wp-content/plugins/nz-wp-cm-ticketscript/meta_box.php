@@ -12,11 +12,11 @@ class NzWpCmTicketscriptMetaBox
     /**
      * Hook into the appropriate actions when the class is constructed.
      */
-    public function __construct($post_types)
+    public function __construct($post_types, $channel_id)
     {
         $this->meta_slug = 'nzwpcm_ticketscript_event_id';
         $this->box_slug = 'nzwpcm_ticketscript';
-        $this->channel_id = 'LSSX45SZ';
+        $this->channel_id = $channel_id;
 
 
         $this->post_types = is_array($post_types) ? $post_types : [$post_types];
@@ -168,7 +168,7 @@ class NzWpCmTicketscriptMetaBox
                     window.Ticketscript = {};
                     Ticketscript.Application = {
                         containerId: "ts-shop",
-                        channel: "LSSX45SZ",
+                        channel: "<?php echo $this->channel_id ?>",
                         eventId: eid,
                         type: "iframe",
                         language: "es",
