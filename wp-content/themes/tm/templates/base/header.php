@@ -13,8 +13,8 @@
                     <?php echo nz_fb_like_iframe('https://www.facebook.com/trendsmag.net'); ?>
                     <?php get_template_part('templates/nz/social/social-icons-top'); ?>
                 </div>
-                <a href="<?php echo get_permalink(get_page_by_path('entradas')) ?>" class="pull-right btn btn-default">
-                    comprar entradas
+                <a href="<?php echo get_permalink(get_page_by_path('entradas')) ?>" class="pull-right btn btn-default2 btn-buytickets">
+                    TREND tickets
                 </a>
             </div>
         </div>
