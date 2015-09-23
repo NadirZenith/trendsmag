@@ -4,7 +4,8 @@
             <div class="col-xs-10 col-md-5 col-sm-7">
                 <h1 class="site-logo text-hide">
                     <a href="<?php echo get_home_url() ?>" title="TrendsMag">
-                        <img src="<?php echo nz_get_image_asset('logo/white-site-rc1.png') ?>" /> TrendsMag
+                        <img src="<?php echo nz_get_image_asset('logo/trendsmag-logo.png') ?>" title="trendsmag-logo"/> TrendsMag
+                        <!--<img src="<?php echo nz_get_image_asset('logo/white-site-rc1.png') ?>" title="trendsmag-logo"/> TrendsMag-->
                     </a>
                 </h1>
             </div>
@@ -13,13 +14,12 @@
                     <?php echo nz_fb_like_iframe('https://www.facebook.com/trendsmag.net'); ?>
                     <?php get_template_part('templates/nz/social/social-icons-top'); ?>
                 </div>
-                <a href="<?php echo get_permalink(get_page_by_path('entradas')) ?>" class="pull-right btn btn-default2 btn-buytickets">
+                <a href="<?php echo get_permalink(get_page_by_path('entradas')) ?>" class="pull-right btn btn-buytickets">
                     TREND tickets
                 </a>
             </div>
         </div>
     </div>
-
     <div id="top-navbar" class="navbar navbar-default" >
         <div class="container">
             <div class="navbar-header">
@@ -31,14 +31,9 @@
                 </button>
                 <div id="mobile-site-logo" class="hidden-sm hidden-md hidden-lg text-hide">
                     <a href="<?php echo get_home_url() ?>" title="TrendsMag">
-                        <img width="200" src="<?php echo nz_get_image_asset('logo/white-site-rc1.png') ?>" /> TrendsMag
+                        <img width="200" src="<?php echo nz_get_image_asset('logo/white-site-rc1.png') ?>" title="trendsmag-logo"/> TrendsMag
                     </a>
                 </div>
-                <?php
-                /*
-                  <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-                 */
-                ?>
             </div>
             <nav class="collapse navbar-collapse" role="navigation">
                 <?php

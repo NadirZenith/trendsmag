@@ -1,4 +1,3 @@
-
 <section class="row">
       <div class="col-xs-12">
             <h1 class="h4">
@@ -40,12 +39,9 @@
             echo nz_tpl_loop( $tpl_loop );
             ?>
 
-
       <?php endif; ?>
 </section>
 
-
-<!-- FRONT PAGE PAGER ??-->
 <?php if ( $wp_query->max_num_pages > 1 ) : ?>
 
       <nav class="post-nav">
@@ -64,7 +60,7 @@
                   e.preventDefault();
                   var $btn = $(e.currentTarget);
 
-                  $box = $btn.next('.slideup-box');
+                  var $box = $btn.next('.slideup-box');
                   $box.css("bottom", "3px");
 
 
