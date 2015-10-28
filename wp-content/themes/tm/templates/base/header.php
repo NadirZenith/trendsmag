@@ -5,7 +5,6 @@
                 <h1 class="site-logo text-hide">
                     <a href="<?php echo get_home_url() ?>" title="TrendsMag">
                         <img src="<?php echo nz_get_image_asset('logo/trendsmag-logo.png') ?>" title="trendsmag-logo"/> TrendsMag
-                        <!--<img src="<?php echo nz_get_image_asset('logo/white-site-rc1.png') ?>" title="trendsmag-logo"/> TrendsMag-->
                     </a>
                 </h1>
             </div>
@@ -31,7 +30,7 @@
                 </button>
                 <div id="mobile-site-logo" class="hidden-sm hidden-md hidden-lg text-hide">
                     <a href="<?php echo get_home_url() ?>" title="TrendsMag">
-                        <img width="200" src="<?php echo nz_get_image_asset('logo/white-site-rc1.png') ?>" title="trendsmag-logo"/> TrendsMag
+                        <img width="200" src="<?php echo nz_get_image_asset('logo/trendsmag-logo.png') ?>" title="trendsmag-logo"/> TrendsMag
                     </a>
                 </div>
             </div>
