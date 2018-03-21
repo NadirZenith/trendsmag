@@ -31,5 +31,15 @@ sitemap.xml.gz
 /.idea
 
 /docker/volume/db/mysql
+
+/docker/volume/db/dump/*
+!/docker/volume/db/dump/.gitkeep
+
+/docker/volume/logs/*
+!/docker/volume/logs/.gitkeep
+
+/docker/volume/uploads/*
+!/docker/volume/uploads/.gitkeep
+
 /docker/docker-compose.override.yml
 /docker/.env
