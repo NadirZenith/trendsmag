@@ -28,6 +28,9 @@ sitemap.xml.gz
 /web/wp-content/plugins/user-switching/
 /web/wp-content/plugins/wpdevtool/
 
+/web/wp-content/plugins/sam-images/
+!/web/wp-content/plugins/sam-images/.gitkeep
+
 /.idea
 
 /docker/volume/db/mysql
