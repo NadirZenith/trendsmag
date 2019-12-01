@@ -12,7 +12,6 @@ sitemap.xml
 /web/wp-content/cache/
 /web/wp-content/backups/
 sitemap.xml.gz
-/web/wp-config.php
 
 /web/wp-content/plugins/all-in-one-wp-security-and-firewall/logs/
 /web/wp-content/aiowps_backups/
