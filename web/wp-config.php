@@ -15,8 +15,8 @@
  */
 error_reporting(0);
 
-define( 'WP_HOME', 'http://www.trendsmag.test/' );
-define( 'WP_SITEURL', 'http://www.trendsmag.test/web/' );
+define( 'WP_HOME', getenv('WP_HOME'));
+define( 'WP_SITEURL', getenv('WP_SITEURL') );
 
 
 // ** Ajustes de MySQL. Solicita estos datos a tu proveedor de alojamiento web. ** //
