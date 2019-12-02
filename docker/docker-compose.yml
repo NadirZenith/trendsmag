@@ -33,3 +33,12 @@ services:
         WP_HOME: ${WP_HOME}
         WP_SITEURL: ${WP_SITEURL}
         WP_DEBUG: ${WP_DEBUG}
+        AUTH_KEY: ${AUTH_KEY}
+        SECURE_AUTH_KEY: ${SECURE_AUTH_KEY}
+        LOGGED_IN_KEY: ${LOGGED_IN_KEY}
+        NONCE_KEY: ${NONCE_KEY}
+        AUTH_SALT: ${AUTH_SALT}
+        SECURE_AUTH_SALT: ${SECURE_AUTH_SALT}
+        LOGGED_IN_SALT: ${LOGGED_IN_SALT}
+        NONCE_SALT: ${NONCE_SALT}
+
