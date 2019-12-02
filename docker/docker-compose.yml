@@ -1,8 +1,7 @@
 version: "3"
 services:
     mariadb:
-      container_name: ${COMPOSE_PROJECT_NAME}_mariadb
-      image: mariadb:10.1
+      build: mariadb
       working_dir: /application
       volumes:
         - ./volume/db/mysql:/var/lib/mysql
@@ -13,8 +12,7 @@ services:
         MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 
     nginx:
-      container_name: ${COMPOSE_PROJECT_NAME}_nginx
-      image: nginx:alpine
+      build: nginx
       working_dir: /application
       volumes:
           - ${APP_PATH}:/application
@@ -23,7 +21,6 @@ services:
           - ./volume/uploads:/application/web/wp-content/uploads
 
     php:
-      container_name: ${COMPOSE_PROJECT_NAME}_php
       build: php-fpm
       working_dir: /application
       volumes:
