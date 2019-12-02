@@ -57,6 +57,10 @@ define('SECURE_AUTH_SALT', getenv('SECURE_AUTH_SALT'));
 define('LOGGED_IN_SALT', getenv('LOGGED_IN_SALT'));
 define('NONCE_SALT', getenv('NONCE_SALT'));
 
+if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false){
+    $_SERVER['HTTPS']='on';
+}
+
 /**#@-*/
 
 /**
