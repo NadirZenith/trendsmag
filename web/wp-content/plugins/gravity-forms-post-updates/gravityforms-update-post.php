@@ -232,20 +232,20 @@ class gform_update_post
         $dir = str_replace('\\' ,'/', $dir);
 
         // if file is in plugins folder
-        $wp_plugin_dir = str_replace('\\' ,'/', WP_PLUGIN_DIR); 
+        $wp_plugin_dir = str_replace('\\' ,'/', WP_PLUGIN_DIR);
         $dir = str_replace($wp_plugin_dir, plugins_url(), $dir, $count);
 
         if ( $count < 1 )
         {
 	        // if file is in wp-content folder
-	        $wp_content_dir = str_replace('\\' ,'/', WP_CONTENT_DIR); 
+	        $wp_content_dir = str_replace('\\' ,'/', WP_CONTENT_DIR);
 	        $dir = str_replace($wp_content_dir, content_url(), $dir, $count);
         }
 
         if ( $count < 1 )
         {
 	        // if file is in ??? folder
-	        $wp_dir = str_replace('\\' ,'/', ABSPATH); 
+	        $wp_dir = str_replace('\\' ,'/', ABSPATH);
 	        $dir = str_replace($wp_dir, site_url('/'), $dir);
         }
 
@@ -323,7 +323,7 @@ class gform_update_post
 	 *
 	 * @author  Jake Snyder
 	 * @date	22/08/13
-	 * @return	void	
+	 * @return	void
 	 */
 	public static function process_request()
 	{
@@ -474,7 +474,7 @@ class gform_update_post
 	 * @author  Jake Snyder
 	 * @since   1.2.6
 	 * @type	shortcode
-	 * @return	void	
+	 * @return	void
 	 */
 	public static function shortcode_edit_link( $atts )
 	{
@@ -494,7 +494,7 @@ class gform_update_post
 	 * @author  Jake Snyder
 	 * @date	12/09/13]
 	 * @type	shortcode
-	 * @return	void	
+	 * @return	void
 	 */
 	public static function shortcode( $atts )
 	{
@@ -966,7 +966,7 @@ class gform_update_post
 					$field['inputName'] = $field['postCustomFieldName'];
 
 					$value = $new_value;
-					add_filter( 'gform_field_value_' . $field['inputName'], function($value) use($value) { return $value; } );
+					add_filter( 'gform_field_value_' . $field['inputName'], function($v_alue) use($value) { return $_value; } );
 				}
 				break;
 
@@ -1043,7 +1043,7 @@ class gform_update_post
 	 *
 	 * Adds post id to cause post to be udpated instead of inserted.
 	 *
-	 * Adds the support for unique custom fields which clean up the database. This does force a new post_meta entry every save though. 
+	 * Adds the support for unique custom fields which clean up the database. This does force a new post_meta entry every save though.
 	 * This is forced because GF uses "add_post_meta" instead of "update_post_meta".
 	 *
 	 * @author  Kevin Miller

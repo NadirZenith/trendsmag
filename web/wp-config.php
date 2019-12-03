@@ -80,6 +80,7 @@ $table_prefix  = 'wp_';
  * en sus entornos de desarrollo.
  */
 define('WP_DEBUG', intval(getenv('WP_DEBUG')));
+define('WP_ENV', intval(getenv('WP_ENV')));
 
 /* ¡Eso es todo, deja de editar! Feliz blogging */
 
