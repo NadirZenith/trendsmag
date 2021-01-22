@@ -763,7 +763,9 @@ default:
 
 	$reauth = empty($_REQUEST['reauth']) ? false : true;
 
-	$user = wp_signon( '', $secure_cookie );
+	// patched https://core.trac.wordpress.org/attachment/ticket/37071/fix-wp-login-error.patch
+	$user = wp_signon( [], $secure_cookie );
+//	$user = wp_signon( '', $secure_cookie );
 
 	if ( empty( $_COOKIE[ LOGGED_IN_COOKIE ] ) ) {
 		if ( headers_sent() ) {
