@@ -753,7 +753,9 @@ default:
 	if ( !$secure_cookie && is_ssl() && force_ssl_login() && !force_ssl_admin() && ( 0 !== strpos($redirect_to, 'https') ) && ( 0 === strpos($redirect_to, 'http') ) )
 		$secure_cookie = false;
 
-	$user = wp_signon( '', $secure_cookie );
+    // patched https://core.trac.wordpress.org/Cattachment/ticket/37071/fix-wp-login-error.patch
+    $user = wp_signon( [], $secure_cookie );
+//	$user = wp_signon( '', $secure_cookie );
 
 	if ( empty( $_COOKIE[ LOGGED_IN_COOKIE ] ) ) {
 		if ( headers_sent() ) {

@@ -763,7 +763,7 @@ default:
 
 	$reauth = empty($_REQUEST['reauth']) ? false : true;
 
-	// patched https://core.trac.wordpress.org/attachment/ticket/37071/fix-wp-login-error.patch
+	// patched https://core.trac.wordpress.org/Cattachment/ticket/37071/fix-wp-login-error.patch
 	$user = wp_signon( [], $secure_cookie );
 //	$user = wp_signon( '', $secure_cookie );
 
