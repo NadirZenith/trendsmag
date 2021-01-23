@@ -45,3 +45,5 @@ sitemap.xml.gz
 
 /docker/docker-compose.override.yml
 /docker/.env
+
+/backups
