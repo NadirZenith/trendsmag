@@ -1,49 +1,49 @@
 .htaccess
-/web/wp-content/uploads/
-/web/wp-content/blogs.dir/
-/web/wp-content/upgrade/
-/web/wp-content/backup-db/
-/web/wp-content/advanced-cache.php
-/web/wp-content/wp-cache-config.php
-/web/wp-content/w3tc-config.php
-/web/wp-content/db.php
+/site/wp-content/uploads/
+/site/wp-content/blogs.dir/
+/site/wp-content/upgrade/
+/site/wp-content/backup-db/
+/site/wp-content/advanced-cache.php
+/site/wp-content/wp-cache-config.php
+/site/wp-content/w3tc-config.php
+/site/wp-content/db.php
 sitemap.xml
 *.log
-/web/wp-content/cache/
-/web/wp-content/backups/
+/site/wp-content/cache/
+/site/wp-content/backups/
 sitemap.xml.gz
 
-/web/wp-content/plugins/all-in-one-wp-security-and-firewall/logs/
-/web/wp-content/aiowps_backups/
+/site/wp-content/plugins/all-in-one-wp-security-and-firewall/logs/
+/site/wp-content/aiowps_backups/
 
-/web/wp-content/mu-plugins/
+/site/wp-content/mu-plugins/
 
-/web/wp-content/plugins/core-control/
-/web/wp-content/plugins/debug-*/
-/web/wp-content/plugins/developer/
-/web/wp-content/plugins/query-monitor/
-/web/wp-content/plugins/rewrite-rules-inspector/
-/web/wp-content/plugins/theme-check/
-/web/wp-content/plugins/user-switching/
-/web/wp-content/plugins/wpdevtool/
+/site/wp-content/plugins/core-control/
+/site/wp-content/plugins/debug-*/
+/site/wp-content/plugins/developer/
+/site/wp-content/plugins/query-monitor/
+/site/wp-content/plugins/rewrite-rules-inspector/
+/site/wp-content/plugins/theme-check/
+/site/wp-content/plugins/user-switching/
+/site/wp-content/plugins/wpdevtool/
 
-/web/wp-content/plugins/sam-images/
-!/web/wp-content/plugins/sam-images/.gitkeep
+/site/wp-content/plugins/sam-images/
+!/site/wp-content/plugins/sam-images/.gitkeep
 
 /.idea
 
-/docker/volume/db/mysql
+/volume/db/mysql
 
-/docker/volume/db/dump/*
-!/docker/volume/db/dump/.gitkeep
+/volume/db/dump/*
+!/volume/db/dump/.gitkeep
 
-/docker/volume/logs/*
-!/docker/volume/logs/.gitkeep
+/volume/logs/*
+!/volume/logs/.gitkeep
 
-/docker/volume/uploads/*
-!/docker/volume/uploads/.gitkeep
+/volume/uploads/*
+!/volume/uploads/.gitkeep
 
-/docker/docker-compose.override.yml
-/docker/.env
+/docker-compose.override.yml
+/.env
 
 /backups

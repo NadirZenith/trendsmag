@@ -9,8 +9,7 @@ read_var() {
 
 # build needed directories
 SCRIPT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )
-DOCKER_DIR=$( realpath "${SCRIPT_DIR}/../docker" )
-ENV_FILE=$( realpath "${DOCKER_DIR}/.env" )
+ENV_FILE=$( realpath "${SCRIPT_DIR}/../.env" )
 BACKUPS_DIR=$( realpath "${SCRIPT_DIR}/../backups" )
 
 # create backups dir if it does not exist

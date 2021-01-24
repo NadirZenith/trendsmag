@@ -1,0 +1,17 @@
+version: "3.5"
+services:
+    mariadb:
+      build: docker/mariadb
+      volumes:
+        - ./volume/db/mysql:/var/lib/mysql
+      env_file:
+        - .env
+
+    wp:
+      build: docker/wp
+      env_file:
+        - .env
+      volumes:
+        - ./volume/uploads:/var/www/html/wp-content/uploads
+        - ./site/wp-content:/var/www/html/wp-content
+        - ./site/wp-config.php:/var/www/html/wp-config.php

@@ -1,0 +1,13 @@
+version: "3"
+services:
+    mariadb:
+      restart: unless-stopped
+#      volumes:
+#        - ./volume/db/dump:/docker-entrypoint-initdb.d
+#      ports:
+#        - "3306:3306"
+
+    wp:
+      restart: unless-stopped
+#      ports:
+#        - 80:80
