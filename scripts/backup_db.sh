@@ -1,4 +1,5 @@
-#!/usr/bin/env sh
+#!/bin/bash
+
 # @todo keep only X last backup files
 
 # include common backup script

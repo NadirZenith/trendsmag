@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 # include common backup script
 . "$(dirname "$0")/common_backup.sh"

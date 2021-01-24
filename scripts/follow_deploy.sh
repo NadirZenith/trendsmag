@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 git add . && git status && git commit -m fix && git push origin pre
 
